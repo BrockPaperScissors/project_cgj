@@ -11,5 +11,12 @@ config_version=5
 [application]
 
 config/name="project_cgj"
+run/main_scene="uid://myv826whs34o"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
+
+[display]
+
+window/size/viewport_width=1280
+window/size/viewport_height=720
+window/stretch/mode="canvas_items"
