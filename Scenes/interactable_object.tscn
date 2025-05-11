@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://cbfjvndo5qu4x"]
+
+[ext_resource type="Script" uid="uid://bxxqpjrvc5sd3" path="res://Scripts/interactable_object.gd" id="1_74dx5"]
+[ext_resource type="Texture2D" uid="uid://c2r1ga6ltgsfp" path="res://Assets/plant_test.png" id="2_bccpt"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bccpt"]
+size = Vector2(46, 42)
+
+[node name="Interactable_object" type="Area2D"]
+script = ExtResource("1_74dx5")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("2_bccpt")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 22)
+scale = Vector2(2, 2)
+shape = SubResource("RectangleShape2D_bccpt")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
