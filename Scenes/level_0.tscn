@@ -1,6 +1,15 @@
-[gd_scene load_steps=2 format=3 uid="uid://myv826whs34o"]
+[gd_scene load_steps=5 format=3 uid="uid://myv826whs34o"]
 
 [ext_resource type="Texture2D" uid="uid://b771bgq4oxeq4" path="res://Assets/tempAssets/tempBG.png" id="1_m0b12"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m0b12"]
+size = Vector2(1290, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8ryqv"]
+size = Vector2(20, 512)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_31js7"]
+size = Vector2(20, 510)
 
 [node name="level_0" type="Node2D"]
 
@@ -8,3 +17,31 @@
 offset_right = 40.0
 offset_bottom = 40.0
 texture = ExtResource("1_m0b12")
+
+[node name="Boundaries" type="Node" parent="."]
+
+[node name="Boundary_floor" type="StaticBody2D" parent="Boundaries"]
+position = Vector2(4, 495)
+
+[node name="Sprite2D" type="Sprite2D" parent="Boundaries/Boundary_floor"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boundaries/Boundary_floor"]
+position = Vector2(635, 0)
+shape = SubResource("RectangleShape2D_m0b12")
+
+[node name="Boundary_wall_left" type="StaticBody2D" parent="Boundaries"]
+
+[node name="Sprite2D" type="Sprite2D" parent="Boundaries/Boundary_wall_left"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boundaries/Boundary_wall_left"]
+position = Vector2(0, 246)
+shape = SubResource("RectangleShape2D_8ryqv")
+
+[node name="Boundary_wall_right" type="StaticBody2D" parent="Boundaries"]
+position = Vector2(1278, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Boundaries/Boundary_wall_right"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boundaries/Boundary_wall_right"]
+position = Vector2(0, 245)
+shape = SubResource("RectangleShape2D_31js7")
