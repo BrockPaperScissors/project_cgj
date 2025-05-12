@@ -1,0 +1,57 @@
+[gd_scene load_steps=2 format=3 uid="uid://bt88857owj81h"]
+
+[ext_resource type="Script" uid="uid://lrqbp6kfh86" path="res://Scripts/settings_menu.gd" id="1_8rnaw"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_8rnaw")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_left = 600.0
+offset_top = 270.0
+offset_right = 750.0
+offset_bottom = 366.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="Master_Volume" type="HSlider" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+max_value = 1.5
+step = 0.001
+value = 1.5
+
+[node name="MasterStreamPlayer" type="AudioStreamPlayer" parent="MarginContainer/VBoxContainer/Master_Volume"]
+
+[node name="Music_Volume" type="HSlider" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+max_value = 1.5
+step = 0.001
+value = 1.5
+
+[node name="MusicStreamPlayer" type="AudioStreamPlayer" parent="MarginContainer/VBoxContainer/Music_Volume"]
+bus = &"Music"
+
+[node name="Effects_Volume" type="HSlider" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+max_value = 1.5
+step = 0.001
+value = 1.5
+
+[node name="SFXStreamPlayer" type="AudioStreamPlayer" parent="MarginContainer/VBoxContainer/Effects_Volume"]
+bus = &"SFX"
+
+[node name="Button" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Back"
+
+[connection signal="value_changed" from="MarginContainer/VBoxContainer/Master_Volume" to="." method="_on_master_volume_value_changed"]
+[connection signal="value_changed" from="MarginContainer/VBoxContainer/Music_Volume" to="." method="_on_music_volume_value_changed"]
+[connection signal="value_changed" from="MarginContainer/VBoxContainer/Effects_Volume" to="." method="_on_effects_volume_value_changed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Button" to="." method="_on_button_pressed"]
