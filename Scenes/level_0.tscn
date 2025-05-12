@@ -1,10 +1,39 @@
-[gd_scene load_steps=2 format=3 uid="uid://myv826whs34o"]
+[gd_scene load_steps=7 format=3 uid="uid://myv826whs34o"]
 
 [ext_resource type="Texture2D" uid="uid://b771bgq4oxeq4" path="res://Assets/tempAssets/tempBG.png" id="1_m0b12"]
+[ext_resource type="Script" uid="uid://cciaatob1tbwa" path="res://Scripts/game_manager.gd" id="1_pspvu"]
+[ext_resource type="PackedScene" uid="uid://c8brb7pgausxx" path="res://Scenes/player.tscn" id="2_8ryqv"]
+[ext_resource type="PackedScene" uid="uid://bpeaapycljk24" path="res://Scenes/planter_box.tscn" id="3_31js7"]
+[ext_resource type="PackedScene" uid="uid://dphrglwhhfv1f" path="res://Scenes/plant.tscn" id="4_pspvu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8ryqv"]
+size = Vector2(2666, 12)
 
 [node name="level_0" type="Node2D"]
+
+[node name="Game_Manager" type="Node2D" parent="."]
+script = ExtResource("1_pspvu")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 offset_right = 40.0
 offset_bottom = 40.0
 texture = ExtResource("1_m0b12")
+
+[node name="Boundaries" type="Node" parent="."]
+
+[node name="Floor" type="StaticBody2D" parent="Boundaries"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boundaries/Floor"]
+position = Vector2(744, 494)
+shape = SubResource("RectangleShape2D_8ryqv")
+
+[node name="Player" parent="." groups=["player"] instance=ExtResource("2_8ryqv")]
+position = Vector2(132, 460)
+
+[node name="Plant" parent="." instance=ExtResource("4_pspvu")]
+position = Vector2(1047, 430)
+
+[node name="PlanterBox" parent="." instance=ExtResource("3_31js7")]
+position = Vector2(340, 462)
+scale = Vector2(3.28, 2.56)
+collision_layer = 0

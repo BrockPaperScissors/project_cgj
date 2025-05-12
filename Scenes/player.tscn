@@ -1,10 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://c8brb7pgausxx"]
+[gd_scene load_steps=5 format=3 uid="uid://c8brb7pgausxx"]
 
+[ext_resource type="Script" uid="uid://bmrskiiq53sxj" path="res://Scripts/player.gd" id="1_cvnsp"]
 [ext_resource type="Texture2D" uid="uid://gse8hs5vq31b" path="res://Assets/tempAssets/placeHolderSprite.png" id="1_v0iea"]
+[ext_resource type="PackedScene" uid="uid://dfsv7ttf1w5ko" path="res://Scenes/interacting_component.tscn" id="3_6t5aa"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_cvnsp"]
 
 [node name="Player" type="CharacterBody2D"]
+collision_layer = 2
+script = ExtResource("1_cvnsp")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_v0iea")
@@ -13,3 +17,7 @@ texture = ExtResource("1_v0iea")
 position = Vector2(-2, 0)
 scale = Vector2(2.3, 2.3)
 shape = SubResource("CircleShape2D_cvnsp")
+
+[node name="InteractingComponent" parent="." instance=ExtResource("3_6t5aa")]
+position = Vector2(-2, 0)
+scale = Vector2(3, 3)
