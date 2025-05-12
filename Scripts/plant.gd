@@ -22,7 +22,7 @@ func _ready():
 
 func _on_interact():
 	if interactable.isInteractable == true:
-		plant_gathered.emit()
+
 		print("Plant harvested")
 		queue_free()
 	
