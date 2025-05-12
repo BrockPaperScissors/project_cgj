@@ -4,6 +4,7 @@ class_name Plant extends StaticBody2D
 @onready var interactable: Area2D = $Interactable
 @onready var timer: Timer = $Timer
 
+signal plant_gathered
 #@onready var gameManager = %Game_Manager
 @export var type : String
 @export var value : int = 0
@@ -21,6 +22,7 @@ func _ready():
 
 func _on_interact():
 	if interactable.isInteractable == true:
+		plant_gathered.emit()
 		print("Plant harvested")
 		queue_free()
 	

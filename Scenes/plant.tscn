@@ -10,7 +10,7 @@
 
 [node name="Plant" type="StaticBody2D"]
 collision_layer = 2
-collision_mask = 2
+collision_mask = 0
 script = ExtResource("1_fgu4o")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
