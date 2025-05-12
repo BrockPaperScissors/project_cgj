@@ -4,8 +4,6 @@ class_name Plant extends StaticBody2D
 @onready var interactable: Area2D = $Interactable
 @onready var timer: Timer = $Timer
 
-signal plant_gathered
-#@onready var gameManager = %Game_Manager
 @export var type : String
 @export var value : int = 0
 @export var depth : int
@@ -13,6 +11,7 @@ signal plant_gathered
 @export var growthLevel : int
 @export var waterLevel : int
 @export var soilQuality : int = 0
+@export var lightExposure : int = 0
 
 
 func _ready():
@@ -22,18 +21,21 @@ func _ready():
 
 func _on_interact():
 	if interactable.isInteractable == true:
-
 		print("Plant harvested")
 		queue_free()
 	
 	
 	
-func startGrowth():
+func startGrowth(soilIn, waterIn, lightIn, typeIn):
+	soilQuality = soilIn
+	waterLevel = waterIn
+	lightExposure = lightIn
+	type = typeIn
 	print("Starting to grow")
 	
 	
 func die():
-	pass
+	print("plant has died")
 
 func consumeResource():
 	if waterLevel > 0:
@@ -45,9 +47,19 @@ func amazingGrowth():
 	pass
 
 func nextStage():
-	pass
+	timer.wait_time = 10 * (growthLevel + 1)
+	timer.start()
+	print("Starting growth level " + str(growthLevel))
 	
 func _on_timer_timeout():
 	print("times up plant")
 	interactable.isInteractable = true
-	sprite.self_modulate = Color(0, 255, 0, 1)
+	growthLevel += 1
+	
+	if growthLevel <= 3:
+		nextStage()
+		if growthLevel == 3:
+			sprite.self_modulate = Color(0, 255, 0, 1)
+	else:
+		sprite.self_modulate = Color(165, 42, 42, 1)
+		die()

@@ -29,7 +29,7 @@ func _sort_by_distance(area1, area2):
 	
 func _on_interact_range_area_entered(area: Area2D) -> void:
 	interactions.push_back(area)
-
+	
 
 func _on_interact_range_area_exited(area: Area2D) -> void:
 	interactions.erase(area)
