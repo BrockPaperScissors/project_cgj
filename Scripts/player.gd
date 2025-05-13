@@ -1,6 +1,7 @@
 extends CharacterBody2D
 class_name Player
 
+@onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @export var nearestItem = null
 @export var inRange = false
 @export var speed = 400
@@ -15,6 +16,14 @@ func _physics_process(delta):
 	
 	var moveDirection = Input.get_axis("move_left", "move_right")
 	velocity.x = moveDirection * speed
+	
+	if moveDirection == -1:
+		animated_sprite_2d.play("move_left")
+	if moveDirection == 1:
+		animated_sprite_2d.play("move_right")
+	if moveDirection == 0.0:
+		animated_sprite_2d.play("idle")
+	
 		
 	var screen_size = get_viewport_rect().size
 	global_position = global_position.clamp(Vector2(0, 0), screen_size)

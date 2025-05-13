@@ -1,11 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://myv826whs34o"]
+[gd_scene load_steps=7 format=3 uid="uid://myv826whs34o"]
 
 [ext_resource type="Texture2D" uid="uid://b771bgq4oxeq4" path="res://Assets/tempAssets/tempBG.png" id="1_m0b12"]
 [ext_resource type="Script" uid="uid://cciaatob1tbwa" path="res://Scripts/game_manager.gd" id="1_pspvu"]
 [ext_resource type="PackedScene" uid="uid://c8brb7pgausxx" path="res://Scenes/player.tscn" id="2_8ryqv"]
 [ext_resource type="PackedScene" uid="uid://bpeaapycljk24" path="res://Scenes/planter_box.tscn" id="3_31js7"]
 [ext_resource type="PackedScene" uid="uid://dphrglwhhfv1f" path="res://Scenes/plant.tscn" id="4_pspvu"]
-[ext_resource type="PackedScene" uid="uid://b07u73r26tb5g" path="res://Scenes/Main_Menu.tscn" id="6_fxla4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8ryqv"]
 size = Vector2(2666, 12)
@@ -38,6 +37,3 @@ position = Vector2(1047, 430)
 position = Vector2(340, 462)
 scale = Vector2(3.28, 2.56)
 collision_layer = 0
-
-[node name="MainMenu" parent="." instance=ExtResource("6_fxla4")]
-visible = false

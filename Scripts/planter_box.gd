@@ -35,8 +35,12 @@ func addPlant():
 		if index == 2:
 			planterInventory[2].position.x = int(plant_instance.position.x - 40)
 		plant_instance.startGrowth(soilQuality, waterLevel, lightExposure, "Carrot")
+	
+		if planterInventory.find(null) == -1:
+			interactable.interactName = "No Room"
 
 func removePlant(node):
+	interactable.interactName = "Plant Seed"
 	var index: int = 0
 	index = planterInventory.find(node)
 	planterInventory[index] = null
