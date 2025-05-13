@@ -11,9 +11,13 @@ config_version=5
 [application]
 
 config/name="project_cgj"
-run/main_scene="uid://myv826whs34o"
+run/main_scene="uid://b07u73r26tb5g"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
+
+[autoload]
+
+BackgroundMusic="*res://Scenes/Background_Music.tscn"
 
 [display]
 
