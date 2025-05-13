@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://wpx2hmkitfru"]
+[gd_scene load_steps=0 format=3 uid="uid://wpx2hmkitfru"]
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer"]
 autoplay = true
