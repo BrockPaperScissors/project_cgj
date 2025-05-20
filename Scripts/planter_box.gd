@@ -11,8 +11,6 @@ extends StaticBody2D
 
 func _ready():
 	interactable.interact = _on_interact
-	#var screenSize = get_viewport_rect().size
-	#position  = global_position.clamp(Vector2(0,0), screenSize)
 	
 	for slot in planterCapacity:
 		planterInventory.push_back(null)
@@ -32,6 +30,7 @@ func addPlant():
 		plant_instance.name = "Plant_" + str(index)
 		planterInventory[index] = plant_instance
 		plantContainer.add_child(plant_instance)
+		
 		if index == 0:
 			planterInventory[0].position.x = int(plant_instance.position.x)
 		if index == 1:

@@ -21,6 +21,7 @@ size = Vector2(20, 580)
 script = ExtResource("1_pspvu")
 
 [node name="TextureRect" type="TextureRect" parent="."]
+z_index = -99
 offset_left = 40.0
 offset_top = -24.0
 offset_right = 1960.0
@@ -73,6 +74,7 @@ position = Vector2(618, 300)
 scale = Vector2(0.6, 0.6)
 
 [node name="WindowBoards" parent="." instance=ExtResource("6_ughle")]
+z_index = -1
 position = Vector2(618, 303)
 scale = Vector2(0.6, 0.6)
 
