@@ -1,18 +1,22 @@
 extends StaticBody2D
 
-@onready var collision_shape_2d: CollisionShape2D = $Interactable/CollisionShape2D
 @onready var interactable: Area2D = $Interactable
 @onready var plantScene = preload("res://Scenes/plant.tscn")
 @onready var plantContainer = $PlantContainer
 @export var waterLevel = 10
 @export var soilQuality = 10
 @export var lightExposure = 10
-@export var planterInventory = [null, null, null]
+@export var planterCapacity = 0
+@export var planterInventory = []
 
 func _ready():
 	interactable.interact = _on_interact
-	var screenSize = get_viewport_rect().size
-	position  = global_position.clamp(Vector2(0,0), screenSize)
+	#var screenSize = get_viewport_rect().size
+	#position  = global_position.clamp(Vector2(0,0), screenSize)
+	
+	for slot in planterCapacity:
+		planterInventory.push_back(null)
+		print(planterInventory)
 	
 
 func _on_interact():

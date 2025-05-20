@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://bhwq53a4bs1ex"]
+
+[ext_resource type="Texture2D" uid="uid://dpb3ve7n4f0e4" path="res://Assets/polishedAssets/kitchen boards.png" id="1_dydw4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dydw4"]
+
+[node name="WindowBoards" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_dydw4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_dydw4")
+disabled = true

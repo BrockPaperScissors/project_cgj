@@ -1,0 +1,41 @@
+[gd_scene load_steps=6 format=3 uid="uid://dc04ldvhuexrt"]
+
+[ext_resource type="PackedScene" uid="uid://gde8uyphfgiq" path="res://Scenes/interactable.tscn" id="1_bgoah"]
+[ext_resource type="Script" uid="uid://ck0fbeee5luvh" path="res://Scripts/planter_box.gd" id="1_kwuf8"]
+[ext_resource type="Texture2D" uid="uid://drksbcu1niuv1" path="res://Assets/tempAssets/flower_pot_temp.png" id="2_cwqns"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cwqns"]
+size = Vector2(21, 21)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x3rmc"]
+size = Vector2(200.75, 11)
+
+[node name="FlowerPot" type="StaticBody2D"]
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("1_kwuf8")
+planterCapacity = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_cwqns")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 9)
+shape = SubResource("RectangleShape2D_cwqns")
+
+[node name="Interactable" parent="." instance=ExtResource("1_bgoah")]
+interactName = "Plant Seed"
+
+[node name="ColliderRight" type="CollisionShape2D" parent="Interactable"]
+position = Vector2(82, 70)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_x3rmc")
+
+[node name="ColliderLeft" type="CollisionShape2D" parent="Interactable"]
+position = Vector2(-61, 70)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_x3rmc")
+
+[node name="PlantContainer" type="Node2D" parent="."]
+
+[connection signal="child_exiting_tree" from="PlantContainer" to="." method="_on_plant_container_child_exiting_tree"]
