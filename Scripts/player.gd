@@ -6,7 +6,7 @@ class_name Player
 @export var inRange = false
 @export var speed = 400
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
-
+var previousDir = 1
 
 func _physics_process(delta):
 	velocity = Vector2(0, 0)
@@ -19,10 +19,15 @@ func _physics_process(delta):
 	
 	if moveDirection == -1:
 		animated_sprite_2d.play("move_left")
+		previousDir = 0
 	if moveDirection == 1:
 		animated_sprite_2d.play("move_right")
+		previousDir = 1
 	if moveDirection == 0.0:
-		animated_sprite_2d.play("idle")
+		if previousDir == 0:
+			animated_sprite_2d.play("idle_left")
+		if previousDir == 1:
+			animated_sprite_2d.play("idle_right")
 	
 		
 	var screen_size = get_viewport_rect().size

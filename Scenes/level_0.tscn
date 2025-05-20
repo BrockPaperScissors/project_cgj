@@ -1,14 +1,16 @@
 [gd_scene load_steps=8 format=3 uid="uid://myv826whs34o"]
 
-[ext_resource type="Texture2D" uid="uid://b771bgq4oxeq4" path="res://Assets/tempAssets/tempBG.png" id="1_m0b12"]
 [ext_resource type="Script" uid="uid://cciaatob1tbwa" path="res://Scripts/game_manager.gd" id="1_pspvu"]
 [ext_resource type="PackedScene" uid="uid://c8brb7pgausxx" path="res://Scenes/player.tscn" id="2_8ryqv"]
+[ext_resource type="Texture2D" uid="uid://ifqnyh7yldi" path="res://Assets/polishedAssets/kitchen main.png" id="2_fxla4"]
 [ext_resource type="PackedScene" uid="uid://bpeaapycljk24" path="res://Scenes/planter_box.tscn" id="3_31js7"]
-[ext_resource type="PackedScene" uid="uid://dphrglwhhfv1f" path="res://Scenes/plant.tscn" id="4_pspvu"]
 [ext_resource type="PackedScene" uid="uid://b07u73r26tb5g" path="res://Scenes/Main_Menu.tscn" id="6_fxla4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8ryqv"]
 size = Vector2(2666, 12)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ibbt5"]
+size = Vector2(20, 580)
 
 [node name="level_0" type="Node2D"]
 
@@ -16,23 +18,37 @@ size = Vector2(2666, 12)
 script = ExtResource("1_pspvu")
 
 [node name="TextureRect" type="TextureRect" parent="."]
-offset_right = 40.0
-offset_bottom = 40.0
-texture = ExtResource("1_m0b12")
+offset_left = 40.0
+offset_top = -24.0
+offset_right = 1960.0
+offset_bottom = 1056.0
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("2_fxla4")
 
 [node name="Boundaries" type="Node" parent="."]
 
 [node name="Floor" type="StaticBody2D" parent="Boundaries"]
+position = Vector2(0, -13)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Boundaries/Floor"]
 position = Vector2(744, 494)
 shape = SubResource("RectangleShape2D_8ryqv")
 
-[node name="Player" parent="." groups=["player"] instance=ExtResource("2_8ryqv")]
-position = Vector2(132, 400)
+[node name="WallLeft" type="StaticBody2D" parent="Boundaries"]
 
-[node name="Plant" parent="." instance=ExtResource("4_pspvu")]
-position = Vector2(1047, 430)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boundaries/WallLeft"]
+position = Vector2(240, 280)
+shape = SubResource("RectangleShape2D_ibbt5")
+
+[node name="WallRight" type="StaticBody2D" parent="Boundaries"]
+position = Vector2(726, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boundaries/WallRight"]
+position = Vector2(240, 280)
+shape = SubResource("RectangleShape2D_ibbt5")
+
+[node name="Player" parent="." groups=["player"] instance=ExtResource("2_8ryqv")]
+position = Vector2(434, 391)
 
 [node name="PlanterBox" parent="." instance=ExtResource("3_31js7")]
 position = Vector2(340, 462)
