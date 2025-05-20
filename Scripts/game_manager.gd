@@ -1,14 +1,11 @@
 extends Node2D
 
-@onready var plantScene = preload("res://Scenes/plant.tscn")
-@export var menuOptions = []
+@onready var main_menu: Control = $"../MainMenu"
 
-var player = null
+func _process(delta):
+	if Input.is_action_just_pressed("open_main_menu"):
+		main_menu.visible = true
 
-func _ready():
-	player = get_tree().get_first_node_in_group("player")
 
-func _input(event):
-	if event.is_action_pressed("interact"):
-		print("Interacting with ", player.nearestItem)
-		
+func _on_flower_pot_plant_gathered(quantity: Variant, type: Variant) -> void:
+	print("Adding: ", quantity, " ", type)

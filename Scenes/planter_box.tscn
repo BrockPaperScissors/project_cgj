@@ -5,19 +5,34 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bccpt"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_oq2ap"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oq2ap"]
+size = Vector2(200.75, 11)
 
 [node name="PlanterBox" type="StaticBody2D"]
+z_index = 99
+collision_layer = 2
+collision_mask = 0
 script = ExtResource("1_74dx5")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(1.5, 1.5)
 shape = SubResource("RectangleShape2D_bccpt")
 
 [node name="Interactable" parent="." instance=ExtResource("2_bccpt")]
+interactName = "Plant Seed"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactable"]
-shape = SubResource("CircleShape2D_oq2ap")
+[node name="ColliderRight" type="CollisionShape2D" parent="Interactable"]
+position = Vector2(82, 70)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_oq2ap")
+
+[node name="ColliderLeft" type="CollisionShape2D" parent="Interactable"]
+position = Vector2(-61, 70)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_oq2ap")
 
 [node name="PlantContainer" type="Node2D" parent="."]
+
+[connection signal="child_exiting_tree" from="PlantContainer" to="." method="_on_plant_container_child_exiting_tree"]
