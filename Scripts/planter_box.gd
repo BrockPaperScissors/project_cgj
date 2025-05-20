@@ -9,6 +9,8 @@ extends StaticBody2D
 @export var planterCapacity = 0
 @export var planterInventory = []
 
+signal plantGathered(quantity, type)
+
 func _ready():
 	interactable.interact = _on_interact
 	
@@ -50,4 +52,23 @@ func removePlant(node):
 
 
 func _on_plant_container_child_exiting_tree(node: Node) -> void:
+	if node is Plant:
+		plantGathered.emit(node.quantity, node.type)
+		
+	
 	removePlant(node)
+	consumeResource()
+
+
+func _on_plant_container_child_entered_tree(node: Node) -> void:
+	if node is Plant:
+		node.setResources(waterLevel, soilQuality, lightExposure)
+		
+
+func consumeResource():
+	if waterLevel > 0:
+		waterLevel = waterLevel - 1
+	if soilQuality > 0:
+		soilQuality = soilQuality - 1
+	if lightExposure > 0: 
+		lightExposure = lightExposure - 1

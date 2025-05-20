@@ -58,12 +58,12 @@ position = Vector2(434, 391)
 position = Vector2(679, 366)
 scale = Vector2(0.656, 0.512)
 
-[node name="FlowerPot2" parent="." instance=ExtResource("4_ughle")]
-position = Vector2(854, 439)
+[node name="FlowerPot3" parent="." instance=ExtResource("4_ughle")]
+position = Vector2(848, 449)
 scale = Vector2(0.656, 0.512)
 
-[node name="FlowerPot3" parent="." instance=ExtResource("4_ughle")]
-position = Vector2(299, 454)
+[node name="FlowerPot2" parent="." instance=ExtResource("4_ughle")]
+position = Vector2(299, 459)
 scale = Vector2(0.656, 0.512)
 
 [node name="MainMenu" parent="." instance=ExtResource("6_fxla4")]
@@ -81,3 +81,7 @@ scale = Vector2(0.6, 0.6)
 [node name="Fridge" parent="." instance=ExtResource("6_ibbt5")]
 position = Vector2(598, 377)
 scale = Vector2(0.55, 0.55)
+
+[connection signal="plantGathered" from="FlowerPot" to="Game_Manager" method="_on_flower_pot_plant_gathered"]
+[connection signal="plantGathered" from="FlowerPot3" to="Game_Manager" method="_on_flower_pot_plant_gathered"]
+[connection signal="plantGathered" from="FlowerPot2" to="Game_Manager" method="_on_flower_pot_plant_gathered"]

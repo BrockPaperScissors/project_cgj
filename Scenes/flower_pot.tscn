@@ -38,4 +38,5 @@ shape = SubResource("RectangleShape2D_x3rmc")
 
 [node name="PlantContainer" type="Node2D" parent="."]
 
+[connection signal="child_entered_tree" from="PlantContainer" to="." method="_on_plant_container_child_entered_tree"]
 [connection signal="child_exiting_tree" from="PlantContainer" to="." method="_on_plant_container_child_exiting_tree"]
