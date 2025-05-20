@@ -1,18 +1,22 @@
 extends StaticBody2D
 
-@onready var collision_shape_2d: CollisionShape2D = $Interactable/CollisionShape2D
 @onready var interactable: Area2D = $Interactable
 @onready var plantScene = preload("res://Scenes/plant.tscn")
 @onready var plantContainer = $PlantContainer
 @export var waterLevel = 10
 @export var soilQuality = 10
 @export var lightExposure = 10
-@export var planterInventory = [null, null, null]
+@export var planterCapacity = 0
+@export var planterInventory = []
+
+signal plantGathered(quantity, type)
 
 func _ready():
 	interactable.interact = _on_interact
-	var screenSize = get_viewport_rect().size
-	position  = global_position.clamp(Vector2(0,0), screenSize)
+	
+	for slot in planterCapacity:
+		planterInventory.push_back(null)
+		print(planterInventory)
 	
 
 func _on_interact():
@@ -28,6 +32,7 @@ func addPlant():
 		plant_instance.name = "Plant_" + str(index)
 		planterInventory[index] = plant_instance
 		plantContainer.add_child(plant_instance)
+		
 		if index == 0:
 			planterInventory[0].position.x = int(plant_instance.position.x)
 		if index == 1:
@@ -47,4 +52,23 @@ func removePlant(node):
 
 
 func _on_plant_container_child_exiting_tree(node: Node) -> void:
+	if node is Plant:
+		plantGathered.emit(node.quantity, node.type)
+		
+	
 	removePlant(node)
+	consumeResource()
+
+
+func _on_plant_container_child_entered_tree(node: Node) -> void:
+	if node is Plant:
+		node.setResources(waterLevel, soilQuality, lightExposure)
+		
+
+func consumeResource():
+	if waterLevel > 0:
+		waterLevel = waterLevel - 1
+	if soilQuality > 0:
+		soilQuality = soilQuality - 1
+	if lightExposure > 0: 
+		lightExposure = lightExposure - 1
