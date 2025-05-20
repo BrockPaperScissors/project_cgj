@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://myv826whs34o"]
+[gd_scene load_steps=9 format=3 uid="uid://myv826whs34o"]
 
 [ext_resource type="Script" uid="uid://cciaatob1tbwa" path="res://Scripts/game_manager.gd" id="1_pspvu"]
 [ext_resource type="PackedScene" uid="uid://c8brb7pgausxx" path="res://Scenes/player.tscn" id="2_8ryqv"]
 [ext_resource type="Texture2D" uid="uid://ifqnyh7yldi" path="res://Assets/polishedAssets/kitchen main.png" id="2_fxla4"]
 [ext_resource type="PackedScene" uid="uid://bpeaapycljk24" path="res://Scenes/planter_box.tscn" id="3_31js7"]
 [ext_resource type="PackedScene" uid="uid://b07u73r26tb5g" path="res://Scenes/Main_Menu.tscn" id="6_fxla4"]
+[ext_resource type="PackedScene" uid="uid://bfg4fkebubodc" path="res://Scenes/fridge.tscn" id="6_ibbt5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8ryqv"]
 size = Vector2(2666, 12)
@@ -57,3 +58,7 @@ collision_layer = 0
 
 [node name="MainMenu" parent="." instance=ExtResource("6_fxla4")]
 visible = false
+
+[node name="Fridge" parent="." instance=ExtResource("6_ibbt5")]
+position = Vector2(598, 377)
+scale = Vector2(0.55, 0.55)
