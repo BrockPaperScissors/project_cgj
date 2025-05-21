@@ -5,7 +5,3 @@ extends StaticBody2D
 
 func _ready():
 	sprite_2d.texture = sprite_img
-
-
-func _on_interactable_body_entered(body):
-	pass # Replace with function body.

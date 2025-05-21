@@ -25,5 +25,3 @@ isInteractable = false
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactable"]
 position = Vector2(483, 288)
 shape = SubResource("RectangleShape2D_ev86x")
-
-[connection signal="body_entered" from="Interactable" to="." method="_on_interactable_body_entered"]
