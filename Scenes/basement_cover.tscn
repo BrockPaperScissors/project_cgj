@@ -1,18 +1,18 @@
 [gd_scene load_steps=5 format=3 uid="uid://cncph3u023qwi"]
 
-[ext_resource type="Texture2D" uid="uid://d3b6w442mt5cs" path="res://Assets/polishedAssets/kitchen hole cover.png" id="1_5cq41"]
+[ext_resource type="Script" uid="uid://p3q53awvfiqa" path="res://Scripts/basement_cover.gd" id="1_ev86x"]
 [ext_resource type="PackedScene" uid="uid://gde8uyphfgiq" path="res://Scenes/interactable.tscn" id="2_o2kmx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o2kmx"]
 size = Vector2(151, 20)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ev86x"]
-size = Vector2(186, 20)
+size = Vector2(333, 20)
 
 [node name="BasementCover" type="StaticBody2D"]
+script = ExtResource("1_ev86x")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_5cq41")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(483, 295)
@@ -23,5 +23,7 @@ interactName = "Break floor"
 isInteractable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactable"]
-position = Vector2(486, 295)
+position = Vector2(483, 288)
 shape = SubResource("RectangleShape2D_ev86x")
+
+[connection signal="body_entered" from="Interactable" to="." method="_on_interactable_body_entered"]
