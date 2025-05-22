@@ -7,7 +7,13 @@ var items = [
 	{"name": "plant2", "icon": preload("res://Assets/UI/icons/plant2.png")},
 	{"name": "plant3", "icon": preload("res://Assets/UI/icons/plant3.png")},
 ]
+func open_inventory():
+	self.visible = true
+	populate_inventory()
 
+func close_inventory():
+	self.visible = false
+	
 func add_item(name: String, icon: Texture):
 	var slot = SlotScene.instantiate()
 	slot.add_item(name, icon)

@@ -42,4 +42,7 @@ func playInteractAnimation():
 		animated_sprite_2d.play("interact_left")
 	if previousDir == 1:
 		animated_sprite_2d.play("interact_right")
+		
+		
+		
 	
