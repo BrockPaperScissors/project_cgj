@@ -1,8 +1,10 @@
 [gd_scene load_steps=6 format=3 uid="uid://dphrglwhhfv1f"]
 
 [ext_resource type="Script" uid="uid://bvvonq84fvio7" path="res://Scripts/plant.gd" id="1_fgu4o"]
-[ext_resource type="Texture2D" uid="uid://c2r1ga6ltgsfp" path="res://Assets/plant_test.png" id="2_8frh5"]
 [ext_resource type="PackedScene" uid="uid://gde8uyphfgiq" path="res://Scenes/interactable.tscn" id="3_wt21e"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_6gypx"]
+load_path = "res://.godot/imported/seed_1.png-5b51d34e5d5ecfb8acf933a82077b1ff.ctex"
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_8frh5"]
 
@@ -15,14 +17,14 @@ collision_mask = 0
 script = ExtResource("1_fgu4o")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.2, 0.2)
-texture = ExtResource("2_8frh5")
+texture = SubResource("CompressedTexture2D_6gypx")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 scale = Vector2(0.1, 0.1)
 shape = SubResource("CircleShape2D_8frh5")
 
 [node name="Interactable" parent="." instance=ExtResource("3_wt21e")]
+scale = Vector2(1, 2.92)
 collision_mask = 2
 interactName = "Harvest"
 

@@ -83,15 +83,12 @@ position = Vector2(434, 391)
 
 [node name="FlowerPot" parent="." instance=ExtResource("4_ughle")]
 position = Vector2(679, 366)
-scale = Vector2(0.656, 0.512)
 
 [node name="FlowerPot3" parent="." instance=ExtResource("4_ughle")]
 position = Vector2(848, 449)
-scale = Vector2(0.656, 0.512)
 
 [node name="FlowerPot2" parent="." instance=ExtResource("4_ughle")]
 position = Vector2(299, 459)
-scale = Vector2(0.656, 0.512)
 
 [node name="MainMenu" parent="." instance=ExtResource("6_fxla4")]
 visible = false

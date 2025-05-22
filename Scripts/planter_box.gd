@@ -1,5 +1,6 @@
 extends StaticBody2D
 
+@onready var spawn_point: Node2D = $SpawnPoint
 @onready var interactable: Area2D = $Interactable
 @onready var plantScene = preload("res://Scenes/plant.tscn")
 @onready var plantContainer = $PlantContainer
@@ -8,6 +9,7 @@ extends StaticBody2D
 @export var lightExposure = 10
 @export var planterCapacity = 0
 @export var planterInventory = []
+var y_offset = 0
 
 signal plantGathered(quantity, type)
 
@@ -29,11 +31,14 @@ func addPlant():
 	if index != -1:
 		var plant_instance = plantScene.instantiate()
 		plant_instance.name = "Plant_" + str(index)
+		plant_instance.position.y = spawn_point.position.y
 		planterInventory[index] = plant_instance
 		plantContainer.add_child(plant_instance)
 		
+		
+		
 		if index == 0:
-			planterInventory[0].position.x = int(plant_instance.position.x)
+			planterInventory[0].position.x = int(plant_instance.position.x - 10)
 		if index == 1:
 			planterInventory[1].position.x = int(plant_instance.position.x + 40)
 		if index == 2:
