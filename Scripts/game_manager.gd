@@ -3,11 +3,7 @@ extends Node2D
 @onready var main_menu: Control = $"../MainMenu"
 @onready var player = $"../Player"
 @onready var ui_inventory = $"../UiManager/PlayerInventoryWindow"
-var isOpen = false
-var activeGame = false
-	
-func _ready():
-	activeGame = true
+var carrotQuant : int = 0
 	
 func _process(delta):
 	if Input.is_action_just_pressed("open_main_menu"):
@@ -23,19 +19,16 @@ func _process(delta):
 		else:
 			ui_inventory.visible = true
 			
-		
-
-
 
 func _on_flower_pot_plant_gathered(quantity: Variant, type: Variant) -> void:
 	print("Adding: ", quantity, " ", type)
-
+	carrotQuant = carrotQuant + quantity
+	print(str(carrotQuant) + " Carrots")
+	
 func toggleInventory():
 	ui_inventory.position = getPlayerPos()
 	ui_inventory.visible = !(ui_inventory.visible)
 
-func _on_ui_manager_visibility_changed():
-	print("Player opened inventory", player)
 	
 func getPlayerPos():
 	var playerPos = player.position

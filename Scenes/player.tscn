@@ -129,10 +129,10 @@ sprite_frames = SubResource("SpriteFrames_f1ek2")
 animation = &"climb_down_ladder"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 56)
-scale = Vector2(2.3, 2.3)
+position = Vector2(13, 41)
+scale = Vector2(2, 2)
 shape = SubResource("CircleShape2D_cvnsp")
 
 [node name="InteractingComponent" parent="." instance=ExtResource("3_6t5aa")]
-position = Vector2(0, 56)
-scale = Vector2(3, 3)
+position = Vector2(13, 41)
+scale = Vector2(2, 2)

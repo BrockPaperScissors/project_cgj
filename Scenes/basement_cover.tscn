@@ -19,11 +19,12 @@ position = Vector2(483, 295)
 shape = SubResource("RectangleShape2D_o2kmx")
 
 [node name="Interactable" parent="." instance=ExtResource("2_o2kmx")]
-interactName = "Break floor"
-isInteractable = false
+interactName = "This area of the floor seems breakable."
+isLore = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactable"]
-position = Vector2(483, 288)
+position = Vector2(531, 288)
+rotation = 1.5708
 shape = SubResource("RectangleShape2D_ev86x")
 
 [connection signal="body_entered" from="Interactable" to="." method="_on_interactable_body_entered"]

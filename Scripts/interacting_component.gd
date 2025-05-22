@@ -17,7 +17,11 @@ func _process(_delta):
 	if interactions and inRange:
 		interactions.sort_custom(_sort_by_distance)
 		if interactions[0].isInteractable:
-			interactLabel.text = "[f] " + interactions[0].interactName
+			if !(interactions[0].isLore):
+				interactLabel.text = "[f] " + interactions[0].interactName
+			else:
+				interactLabel.text = interactions[0].interactName
+				
 			interactLabel.show()
 	else:
 		interactLabel.hide()
