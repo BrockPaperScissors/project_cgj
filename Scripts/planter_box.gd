@@ -16,7 +16,7 @@ func _ready():
 	
 	for slot in planterCapacity:
 		planterInventory.push_back(null)
-		print(planterInventory)
+		#print(planterInventory)
 	
 
 func _on_interact():
@@ -28,7 +28,6 @@ func addPlant():
 		
 	if index != -1:
 		var plant_instance = plantScene.instantiate()
-			
 		plant_instance.name = "Plant_" + str(index)
 		planterInventory[index] = plant_instance
 		plantContainer.add_child(plant_instance)
@@ -39,25 +38,25 @@ func addPlant():
 			planterInventory[1].position.x = int(plant_instance.position.x + 40)
 		if index == 2:
 			planterInventory[2].position.x = int(plant_instance.position.x - 40)
+			
 		plant_instance.startGrowth(soilQuality, waterLevel, lightExposure, "Carrot")
 	
 		if planterInventory.find(null) == -1:
-			interactable.interactName = "No Room"
+			interactable.isInteractable = false
 
 func removePlant(node):
 	interactable.interactName = "Plant Seed"
 	var index: int = 0
 	index = planterInventory.find(node)
 	planterInventory[index] = null
+	interactable.isInteractable = true
 
 
 func _on_plant_container_child_exiting_tree(node: Node) -> void:
 	if node is Plant:
 		plantGathered.emit(node.quantity, node.type)
-		
-	
-	removePlant(node)
-	consumeResource()
+		removePlant(node)
+		consumeResource()
 
 
 func _on_plant_container_child_entered_tree(node: Node) -> void:
