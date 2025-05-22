@@ -1,8 +1,9 @@
-[gd_scene load_steps=18 format=3 uid="uid://c8brb7pgausxx"]
+[gd_scene load_steps=24 format=3 uid="uid://c8brb7pgausxx"]
 
 [ext_resource type="Script" uid="uid://bmrskiiq53sxj" path="res://Scripts/player.gd" id="1_cvnsp"]
 [ext_resource type="Texture2D" uid="uid://dt8yo2i8p0yro" path="res://Assets/polishedAssets/gamjamwalkcyclev2.png" id="2_6t5aa"]
 [ext_resource type="PackedScene" uid="uid://dfsv7ttf1w5ko" path="res://Scenes/interacting_component.tscn" id="3_6t5aa"]
+[ext_resource type="Texture2D" uid="uid://crqf4x2jey7tg" path="res://Assets/polishedAssets/gamejaminteractpng.png" id="3_vgqql"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vgqql"]
 atlas = ExtResource("2_6t5aa")
@@ -19,6 +20,26 @@ region = Rect2(1440, 800, 480, 740)
 [sub_resource type="AtlasTexture" id="AtlasTexture_3smsa"]
 atlas = ExtResource("2_6t5aa")
 region = Rect2(960, 60, 480, 740)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fd4e3"]
+atlas = ExtResource("3_vgqql")
+region = Rect2(657, 0, 657, 908)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qqcod"]
+atlas = ExtResource("3_vgqql")
+region = Rect2(1314, 0, 657, 908)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_igrcy"]
+atlas = ExtResource("3_vgqql")
+region = Rect2(1971, 0, 657, 908)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fs7ks"]
+atlas = ExtResource("3_vgqql")
+region = Rect2(2628, 0, 657, 908)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l6n3p"]
+atlas = ExtResource("3_vgqql")
+region = Rect2(3285, 0, 657, 908)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8erm5"]
 atlas = ExtResource("2_6t5aa")
@@ -82,6 +103,26 @@ animations = [{
 "speed": 0.25
 }, {
 "frames": [{
+"duration": 3.0,
+"texture": SubResource("AtlasTexture_fd4e3")
+}, {
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_qqcod")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_igrcy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fs7ks")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l6n3p")
+}],
+"loop": false,
+"name": &"interact_left",
+"speed": 7.0
+}, {
+"frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_8erm5")
 }, {
@@ -126,7 +167,9 @@ script = ExtResource("1_cvnsp")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.25, 0.25)
 sprite_frames = SubResource("SpriteFrames_f1ek2")
-animation = &"climb_down_ladder"
+animation = &"interact_left"
+frame = 4
+frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(13, 60)
@@ -136,3 +179,5 @@ shape = SubResource("CircleShape2D_cvnsp")
 [node name="InteractingComponent" parent="." instance=ExtResource("3_6t5aa")]
 position = Vector2(13, 60)
 scale = Vector2(2, 2)
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
