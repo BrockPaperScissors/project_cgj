@@ -1,75 +1,8 @@
-[gd_scene load_steps=14 format=3 uid="uid://hibybrytqfud"]
-
-[ext_resource type="Script" uid="uid://lu10q2ohpmfu" path="res://Scripts/ui_manager.gd" id="1_yfxsi"]
-[ext_resource type="Texture2D" uid="uid://bhn35uxdu8r8p" path="res://Assets/polishedAssets/inventory_3.png" id="2_l28dr"]
-[ext_resource type="Script" uid="uid://dd5plojyj3hqy" path="res://Scripts/inventory_window.gd" id="2_rr0xh"]
-[ext_resource type="Script" uid="uid://de1rhc21heeoo" path="res://Scripts/grid_container.gd" id="3_felxf"]
-[ext_resource type="Texture2D" uid="uid://me3f4eb3d5r" path="res://Assets/polishedAssets/inventory_2.png" id="3_jutvs"]
-[ext_resource type="Texture2D" uid="uid://d1kpm0u28g1dn" path="res://Assets/polishedAssets/inventory_1.png" id="4_08khg"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_00rri"]
-atlas = ExtResource("2_l28dr")
-region = Rect2(0, 0, 1920, 1080)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_twi32"]
-atlas = ExtResource("3_jutvs")
-region = Rect2(0, 0, 1920, 1080)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_4f2ml"]
-atlas = ExtResource("4_08khg")
-region = Rect2(0, 0, 1920, 1080)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_5mof6"]
-atlas = ExtResource("4_08khg")
-region = Rect2(0, 0, 1920, 1080)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_4doyo"]
-atlas = ExtResource("3_jutvs")
-region = Rect2(0, 0, 1920, 1080)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_kcn5j"]
-atlas = ExtResource("2_l28dr")
-region = Rect2(0, 0, 1920, 1080)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_dh66f"]
-animations = [{
-"frames": [{
-"duration": 0.75,
-"texture": SubResource("AtlasTexture_00rri")
-}, {
-"duration": 0.5,
-"texture": SubResource("AtlasTexture_twi32")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_4f2ml")
-}],
-"loop": false,
-"name": &"inventory_close",
-"speed": 3.0
-}, {
-"frames": [{
-"duration": 0.75,
-"texture": SubResource("AtlasTexture_5mof6")
-}, {
-"duration": 0.5,
-"texture": SubResource("AtlasTexture_4doyo")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_kcn5j")
-}],
-"loop": false,
-"name": &"inventory_open",
-"speed": 3.0
-}]
+[gd_scene load_steps=4 format=3 uid="uid://hibybrytqfud"]
 
 [node name="UiManager" type="CanvasLayer"]
 script = ExtResource("1_yfxsi")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-sprite_frames = SubResource("SpriteFrames_dh66f")
-animation = &"inventory_close"
-
-[node name="PlayerInventoryWindow" type="Control" parent="."]
 visible = false
 layout_mode = 3
 anchors_preset = 0
@@ -77,7 +10,7 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 script = ExtResource("2_rr0xh")
 
-[node name="Panel" type="Panel" parent="PlayerInventoryWindow"]
+[node name="Panel" type="Panel" parent="PlayerInventory"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -88,7 +21,7 @@ grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.8, 0.8)
 
-[node name="GridContainer" type="GridContainer" parent="PlayerInventoryWindow/Panel"]
+[node name="GridContainer" type="GridContainer" parent="PlayerInventory/Panel"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -100,7 +33,6 @@ offset_bottom = 500.0
 grow_horizontal = 2
 grow_vertical = 2
 columns = 4
-script = ExtResource("3_felxf")
 
 [node name="SettingsWindow" type="Control" parent="."]
 layout_mode = 3

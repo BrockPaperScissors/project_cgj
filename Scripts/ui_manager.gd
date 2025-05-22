@@ -1,3 +1,3 @@
 extends CanvasLayer
 
-@onready var grid = $PlayerInventoryWindow/Panel/GridContainer
+@onready var grid = $PlayerInventory
