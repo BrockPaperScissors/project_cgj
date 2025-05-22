@@ -54,6 +54,11 @@ region = Rect2(1440, 800, 480, 740)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_f1ek2"]
 animations = [{
+"frames": [],
+"loop": true,
+"name": &"climb_down_ladder",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_vgqql")
@@ -121,13 +126,13 @@ script = ExtResource("1_cvnsp")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.25, 0.25)
 sprite_frames = SubResource("SpriteFrames_f1ek2")
-animation = &"idle_right"
+animation = &"climb_down_ladder"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 56)
-scale = Vector2(2.3, 2.3)
+position = Vector2(13, 41)
+scale = Vector2(2, 2)
 shape = SubResource("CircleShape2D_cvnsp")
 
 [node name="InteractingComponent" parent="." instance=ExtResource("3_6t5aa")]
-position = Vector2(0, 56)
-scale = Vector2(3, 3)
+position = Vector2(13, 41)
+scale = Vector2(2, 2)
