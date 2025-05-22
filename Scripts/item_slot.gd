@@ -1,7 +1,8 @@
 extends Control
 
-@onready var icon_rect = $VBoxContainer/TextureRect
+@onready var icon_rect = $VBoxContainer/ItemTooltip
 @onready var label = $VBoxContainer/Label
+
 
 func set_item(name: String, texture: Texture2D):
 	icon_rect.texture = texture

@@ -5,6 +5,7 @@ class_name Player
 @export var nearestItem = null
 @export var inRange = false
 @export var speed = 400
+@export var currAnimation = ""
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var previousDir = 1
 
@@ -19,12 +20,13 @@ func _physics_process(delta):
 	
 	if moveDirection == -1:
 		animated_sprite_2d.play("move_left")
-		previousDir = 0
+		previousDir = -1
 	if moveDirection == 1:
 		animated_sprite_2d.play("move_right")
 		previousDir = 1
+		
 	if moveDirection == 0.0:
-		if previousDir == 0:
+		if previousDir == -1:
 			animated_sprite_2d.play("idle_left")
 		if previousDir == 1:
 			animated_sprite_2d.play("idle_right")
@@ -34,3 +36,13 @@ func _physics_process(delta):
 	global_position = global_position.clamp(Vector2(0, 0), screen_size)
 
 	move_and_slide()
+
+func playInteractAnimation():
+	if previousDir == 0:
+		animated_sprite_2d.play("interact_left")
+	if previousDir == 1:
+		animated_sprite_2d.play("interact_right")
+		
+		
+		
+	

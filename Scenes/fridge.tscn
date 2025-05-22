@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://bfg4fkebubodc"]
 
 [ext_resource type="PackedScene" uid="uid://gde8uyphfgiq" path="res://Scenes/interactable.tscn" id="1_4jc6q"]
-[ext_resource type="Script" uid="uid://be7cjsqiktnnm" path="res://Scenes/fridge.gd" id="1_phxir"]
+[ext_resource type="Script" uid="uid://be7cjsqiktnnm" path="res://Scripts/fridge.gd" id="1_phxir"]
 [ext_resource type="Texture2D" uid="uid://u6typcchmlhu" path="res://Assets/polishedAssets/brown_fridge.png" id="2_4vo87"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_phxir"]
