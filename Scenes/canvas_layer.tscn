@@ -1,0 +1,472 @@
+[gd_scene load_steps=4 format=3 uid="uid://dyo1b7t1hx4n6"]
+
+[ext_resource type="Script" path="res://Scripts/inventory_window.gd" id="1_5oaki"]
+[ext_resource type="Script" path="res://Scenes/canvas_layer.gd" id="1_q85f0"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_q85f0"]
+specular_color = Color(0.629675, 0.629675, 0.629675, 1)
+
+[node name="CanvasLayer" type="CanvasLayer"]
+script = ExtResource("1_q85f0")
+
+[node name="fridgeInventory" type="PanelContainer" parent="."]
+visible = false
+z_index = 1
+offset_right = 638.0
+offset_bottom = 479.0
+scale = Vector2(0.5, 0.442)
+size_flags_horizontal = 3
+script = ExtResource("1_5oaki")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="fridgeInventory"]
+layout_mode = 2
+size_flags_vertical = 0
+
+[node name="Row_1" type="HBoxContainer" parent="fridgeInventory/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="fridgeInventory/VBoxContainer/Row_1"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="TextureRect" type="TextureRect" parent="fridgeInventory/VBoxContainer/Row_1/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = SubResource("CanvasTexture_q85f0")
+expand_mode = 4
+
+[node name="Label" type="Label" parent="fridgeInventory/VBoxContainer/Row_1/VBoxContainer"]
+layout_mode = 2
+text = "Item 1"
+horizontal_alignment = 1
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="fridgeInventory/VBoxContainer/Row_1"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="TextureRect2" type="TextureRect" parent="fridgeInventory/VBoxContainer/Row_1/VBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = SubResource("CanvasTexture_q85f0")
+expand_mode = 4
+
+[node name="Label" type="Label" parent="fridgeInventory/VBoxContainer/Row_1/VBoxContainer2"]
+layout_mode = 2
+text = "Item 2"
+horizontal_alignment = 1
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="fridgeInventory/VBoxContainer/Row_1"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="TextureRect3" type="TextureRect" parent="fridgeInventory/VBoxContainer/Row_1/VBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = SubResource("CanvasTexture_q85f0")
+expand_mode = 4
+
+[node name="Label" type="Label" parent="fridgeInventory/VBoxContainer/Row_1/VBoxContainer3"]
+layout_mode = 2
+text = "Item 3"
+horizontal_alignment = 1
+
+[node name="VBoxContainer4" type="VBoxContainer" parent="fridgeInventory/VBoxContainer/Row_1"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="TextureRect4" type="TextureRect" parent="fridgeInventory/VBoxContainer/Row_1/VBoxContainer4"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = SubResource("CanvasTexture_q85f0")
+expand_mode = 4
+
+[node name="Label" type="Label" parent="fridgeInventory/VBoxContainer/Row_1/VBoxContainer4"]
+layout_mode = 2
+text = "Item 4"
+horizontal_alignment = 1
+
+[node name="Row_2" type="HBoxContainer" parent="fridgeInventory/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="fridgeInventory/VBoxContainer/Row_2"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="TextureRect" type="TextureRect" parent="fridgeInventory/VBoxContainer/Row_2/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = SubResource("CanvasTexture_q85f0")
+expand_mode = 4
+
+[node name="Label" type="Label" parent="fridgeInventory/VBoxContainer/Row_2/VBoxContainer"]
+layout_mode = 2
+text = "Item 5"
+horizontal_alignment = 1
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="fridgeInventory/VBoxContainer/Row_2"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="TextureRect2" type="TextureRect" parent="fridgeInventory/VBoxContainer/Row_2/VBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = SubResource("CanvasTexture_q85f0")
+expand_mode = 4
+
+[node name="Label" type="Label" parent="fridgeInventory/VBoxContainer/Row_2/VBoxContainer2"]
+layout_mode = 2
+text = "Item 6"
+horizontal_alignment = 1
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="fridgeInventory/VBoxContainer/Row_2"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="TextureRect3" type="TextureRect" parent="fridgeInventory/VBoxContainer/Row_2/VBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = SubResource("CanvasTexture_q85f0")
+expand_mode = 4
+
+[node name="Label" type="Label" parent="fridgeInventory/VBoxContainer/Row_2/VBoxContainer3"]
+layout_mode = 2
+text = "Item 7"
+horizontal_alignment = 1
+
+[node name="VBoxContainer4" type="VBoxContainer" parent="fridgeInventory/VBoxContainer/Row_2"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="TextureRect4" type="TextureRect" parent="fridgeInventory/VBoxContainer/Row_2/VBoxContainer4"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = SubResource("CanvasTexture_q85f0")
+expand_mode = 4
+
+[node name="Label" type="Label" parent="fridgeInventory/VBoxContainer/Row_2/VBoxContainer4"]
+layout_mode = 2
+text = "Item 8"
+horizontal_alignment = 1
+
+[node name="Row_3" type="HBoxContainer" parent="fridgeInventory/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="fridgeInventory/VBoxContainer/Row_3"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="TextureRect" type="TextureRect" parent="fridgeInventory/VBoxContainer/Row_3/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = SubResource("CanvasTexture_q85f0")
+expand_mode = 4
+
+[node name="Label" type="Label" parent="fridgeInventory/VBoxContainer/Row_3/VBoxContainer"]
+layout_mode = 2
+text = "Item 9"
+horizontal_alignment = 1
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="fridgeInventory/VBoxContainer/Row_3"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="TextureRect2" type="TextureRect" parent="fridgeInventory/VBoxContainer/Row_3/VBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = SubResource("CanvasTexture_q85f0")
+expand_mode = 4
+
+[node name="Label" type="Label" parent="fridgeInventory/VBoxContainer/Row_3/VBoxContainer2"]
+layout_mode = 2
+text = "Item 10"
+horizontal_alignment = 1
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="fridgeInventory/VBoxContainer/Row_3"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="TextureRect3" type="TextureRect" parent="fridgeInventory/VBoxContainer/Row_3/VBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = SubResource("CanvasTexture_q85f0")
+expand_mode = 4
+
+[node name="Label" type="Label" parent="fridgeInventory/VBoxContainer/Row_3/VBoxContainer3"]
+layout_mode = 2
+text = "Item 11"
+horizontal_alignment = 1
+
+[node name="VBoxContainer4" type="VBoxContainer" parent="fridgeInventory/VBoxContainer/Row_3"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="TextureRect4" type="TextureRect" parent="fridgeInventory/VBoxContainer/Row_3/VBoxContainer4"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = SubResource("CanvasTexture_q85f0")
+expand_mode = 4
+
+[node name="Label" type="Label" parent="fridgeInventory/VBoxContainer/Row_3/VBoxContainer4"]
+layout_mode = 2
+text = "Item 12"
+horizontal_alignment = 1
+
+[node name="playerInventory" type="PanelContainer" parent="."]
+z_index = 1
+offset_right = 638.0
+offset_bottom = 479.0
+scale = Vector2(0.5, 0.442)
+size_flags_horizontal = 3
+script = ExtResource("1_5oaki")
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="playerInventory"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="playerInventory/VBoxContainer2"]
+layout_mode = 2
+size_flags_vertical = 0
+size_flags_stretch_ratio = 10.0
+
+[node name="Row_1" type="HBoxContainer" parent="playerInventory/VBoxContainer2/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="playerInventory/VBoxContainer2/VBoxContainer/Row_1"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="TextureRect" type="TextureRect" parent="playerInventory/VBoxContainer2/VBoxContainer/Row_1/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = SubResource("CanvasTexture_q85f0")
+expand_mode = 4
+
+[node name="Label" type="Label" parent="playerInventory/VBoxContainer2/VBoxContainer/Row_1/VBoxContainer"]
+layout_mode = 2
+text = "Item 1"
+horizontal_alignment = 1
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="playerInventory/VBoxContainer2/VBoxContainer/Row_1"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="TextureRect2" type="TextureRect" parent="playerInventory/VBoxContainer2/VBoxContainer/Row_1/VBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = SubResource("CanvasTexture_q85f0")
+expand_mode = 4
+
+[node name="Label" type="Label" parent="playerInventory/VBoxContainer2/VBoxContainer/Row_1/VBoxContainer2"]
+layout_mode = 2
+text = "Item 2"
+horizontal_alignment = 1
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="playerInventory/VBoxContainer2/VBoxContainer/Row_1"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="TextureRect3" type="TextureRect" parent="playerInventory/VBoxContainer2/VBoxContainer/Row_1/VBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = SubResource("CanvasTexture_q85f0")
+expand_mode = 4
+
+[node name="Label" type="Label" parent="playerInventory/VBoxContainer2/VBoxContainer/Row_1/VBoxContainer3"]
+layout_mode = 2
+text = "Item 3"
+horizontal_alignment = 1
+
+[node name="VBoxContainer4" type="VBoxContainer" parent="playerInventory/VBoxContainer2/VBoxContainer/Row_1"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="TextureRect4" type="TextureRect" parent="playerInventory/VBoxContainer2/VBoxContainer/Row_1/VBoxContainer4"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = SubResource("CanvasTexture_q85f0")
+expand_mode = 4
+
+[node name="Label" type="Label" parent="playerInventory/VBoxContainer2/VBoxContainer/Row_1/VBoxContainer4"]
+layout_mode = 2
+text = "Item 4"
+horizontal_alignment = 1
+
+[node name="Row_2" type="HBoxContainer" parent="playerInventory/VBoxContainer2/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="playerInventory/VBoxContainer2/VBoxContainer/Row_2"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="TextureRect" type="TextureRect" parent="playerInventory/VBoxContainer2/VBoxContainer/Row_2/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = SubResource("CanvasTexture_q85f0")
+expand_mode = 4
+
+[node name="Label" type="Label" parent="playerInventory/VBoxContainer2/VBoxContainer/Row_2/VBoxContainer"]
+layout_mode = 2
+text = "Item 5"
+horizontal_alignment = 1
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="playerInventory/VBoxContainer2/VBoxContainer/Row_2"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="TextureRect2" type="TextureRect" parent="playerInventory/VBoxContainer2/VBoxContainer/Row_2/VBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = SubResource("CanvasTexture_q85f0")
+expand_mode = 4
+
+[node name="Label" type="Label" parent="playerInventory/VBoxContainer2/VBoxContainer/Row_2/VBoxContainer2"]
+layout_mode = 2
+text = "Item 6"
+horizontal_alignment = 1
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="playerInventory/VBoxContainer2/VBoxContainer/Row_2"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="TextureRect3" type="TextureRect" parent="playerInventory/VBoxContainer2/VBoxContainer/Row_2/VBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = SubResource("CanvasTexture_q85f0")
+expand_mode = 4
+
+[node name="Label" type="Label" parent="playerInventory/VBoxContainer2/VBoxContainer/Row_2/VBoxContainer3"]
+layout_mode = 2
+text = "Item 7"
+horizontal_alignment = 1
+
+[node name="VBoxContainer4" type="VBoxContainer" parent="playerInventory/VBoxContainer2/VBoxContainer/Row_2"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="TextureRect4" type="TextureRect" parent="playerInventory/VBoxContainer2/VBoxContainer/Row_2/VBoxContainer4"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = SubResource("CanvasTexture_q85f0")
+expand_mode = 4
+
+[node name="Label" type="Label" parent="playerInventory/VBoxContainer2/VBoxContainer/Row_2/VBoxContainer4"]
+layout_mode = 2
+text = "Item 8"
+horizontal_alignment = 1
+
+[node name="Row_3" type="HBoxContainer" parent="playerInventory/VBoxContainer2/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="playerInventory/VBoxContainer2/VBoxContainer/Row_3"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="TextureRect" type="TextureRect" parent="playerInventory/VBoxContainer2/VBoxContainer/Row_3/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = SubResource("CanvasTexture_q85f0")
+expand_mode = 4
+
+[node name="Label" type="Label" parent="playerInventory/VBoxContainer2/VBoxContainer/Row_3/VBoxContainer"]
+layout_mode = 2
+text = "Item 9"
+horizontal_alignment = 1
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="playerInventory/VBoxContainer2/VBoxContainer/Row_3"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="TextureRect2" type="TextureRect" parent="playerInventory/VBoxContainer2/VBoxContainer/Row_3/VBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = SubResource("CanvasTexture_q85f0")
+expand_mode = 4
+
+[node name="Label" type="Label" parent="playerInventory/VBoxContainer2/VBoxContainer/Row_3/VBoxContainer2"]
+layout_mode = 2
+text = "Item 10"
+horizontal_alignment = 1
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="playerInventory/VBoxContainer2/VBoxContainer/Row_3"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="TextureRect3" type="TextureRect" parent="playerInventory/VBoxContainer2/VBoxContainer/Row_3/VBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = SubResource("CanvasTexture_q85f0")
+expand_mode = 4
+
+[node name="Label" type="Label" parent="playerInventory/VBoxContainer2/VBoxContainer/Row_3/VBoxContainer3"]
+layout_mode = 2
+text = "Item 11"
+horizontal_alignment = 1
+
+[node name="VBoxContainer4" type="VBoxContainer" parent="playerInventory/VBoxContainer2/VBoxContainer/Row_3"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="TextureRect4" type="TextureRect" parent="playerInventory/VBoxContainer2/VBoxContainer/Row_3/VBoxContainer4"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = SubResource("CanvasTexture_q85f0")
+expand_mode = 4
+
+[node name="Label" type="Label" parent="playerInventory/VBoxContainer2/VBoxContainer/Row_3/VBoxContainer4"]
+layout_mode = 2
+text = "Item 12"
+horizontal_alignment = 1
+
+[node name="Spacer" type="HBoxContainer" parent="playerInventory/VBoxContainer2"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Spacer" type="Label" parent="playerInventory/VBoxContainer2/Spacer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="playerInventory/VBoxContainer2"]
+layout_mode = 2
+
+[node name="Money" type="Label" parent="playerInventory/VBoxContainer2/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Money:"
+
+[node name="Spacer" type="Control" parent="playerInventory/VBoxContainer2/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="MoneyVal" type="Label" parent="playerInventory/VBoxContainer2/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "9999999999"
+horizontal_alignment = 2
