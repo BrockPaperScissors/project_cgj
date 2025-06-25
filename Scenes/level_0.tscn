@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://cciaatob1tbwa" path="res://Scripts/game_manager.gd" id="1_pspvu"]
 [ext_resource type="PackedScene" uid="uid://c8brb7pgausxx" path="res://Scenes/player.tscn" id="2_8ryqv"]
 [ext_resource type="Texture2D" uid="uid://ifqnyh7yldi" path="res://Assets/polishedAssets/kitchen main.png" id="2_fxla4"]
-[ext_resource type="PackedScene" uid="uid://dyo1b7t1hx4n6" path="res://Scenes/canvas_layer.tscn" id="2_n6y2o"]
+[ext_resource type="PackedScene" uid="uid://dh7opgs4rrdd1" path="res://Scenes/canvas_layer.tscn" id="2_n6y2o"]
 [ext_resource type="Texture2D" uid="uid://dvw0h62dhmqxg" path="res://Assets/polishedAssets/city background.png" id="3_uu2ix"]
 [ext_resource type="Texture2D" uid="uid://b2ub7s55mgrp4" path="res://Assets/polishedAssets/Basement1 dark.png" id="4_oihvb"]
 [ext_resource type="PackedScene" uid="uid://dc04ldvhuexrt" path="res://Scenes/flower_pot.tscn" id="4_ughle"]
