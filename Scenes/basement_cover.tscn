@@ -10,12 +10,16 @@ size = Vector2(151, 20)
 size = Vector2(333, 20)
 
 [node name="BasementCover" type="StaticBody2D"]
+collision_layer = 2
+collision_mask = 0
 script = ExtResource("1_ev86x")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(483, 295)
+position = Vector2(456, 158)
+rotation = 1.5708
+scale = Vector2(0.48, 0.72)
 shape = SubResource("RectangleShape2D_o2kmx")
 
 [node name="Interactable" parent="." instance=ExtResource("2_o2kmx")]
@@ -23,7 +27,7 @@ interactName = "This area of the floor seems breakable."
 isLore = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactable"]
-position = Vector2(531, 288)
+position = Vector2(498, 288)
 rotation = 1.5708
 shape = SubResource("RectangleShape2D_ev86x")
 
