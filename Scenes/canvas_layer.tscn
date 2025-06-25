@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://dyo1b7t1hx4n6"]
 
-[ext_resource type="Script" uid="uid://cy3pys433sdb7" path="res://Scripts/inventory_window.gd" id="1_5oaki"]
-[ext_resource type="Script" uid="uid://bee18ifuivf3o" path="res://Scenes/canvas_layer.gd" id="1_q85f0"]
+[ext_resource type="Script" path="res://Scripts/inventory_window.gd" id="1_5oaki"]
+[ext_resource type="Script" uid="uid://bee18ifuivf3o" path="res://Scripts/canvas_layer.gd" id="1_q85f0"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_q85f0"]
 specular_color = Color(0.629675, 0.629675, 0.629675, 1)
@@ -18,210 +18,210 @@ scale = Vector2(0.5, 0.442)
 size_flags_horizontal = 3
 script = ExtResource("1_5oaki")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="fridgeInventory"]
+[node name="rowContainer" type="VBoxContainer" parent="fridgeInventory"]
 layout_mode = 2
 size_flags_vertical = 0
 
-[node name="Row_1" type="HBoxContainer" parent="fridgeInventory/VBoxContainer"]
+[node name="Row_1" type="HBoxContainer" parent="fridgeInventory/rowContainer"]
 layout_mode = 2
 size_flags_vertical = 0
 
-[node name="VBoxContainer" type="VBoxContainer" parent="fridgeInventory/VBoxContainer/Row_1"]
+[node name="Slot_1" type="VBoxContainer" parent="fridgeInventory/rowContainer/Row_1" groups=["fridgeInvSlots"]]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="TextureRect" type="TextureRect" parent="fridgeInventory/VBoxContainer/Row_1/VBoxContainer"]
+[node name="TextureRect" type="TextureRect" parent="fridgeInventory/rowContainer/Row_1/Slot_1"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 texture = SubResource("CanvasTexture_q85f0")
 expand_mode = 4
 
-[node name="Label" type="Label" parent="fridgeInventory/VBoxContainer/Row_1/VBoxContainer"]
+[node name="Label" type="Label" parent="fridgeInventory/rowContainer/Row_1/Slot_1"]
 layout_mode = 2
 text = "Item 1"
 horizontal_alignment = 1
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="fridgeInventory/VBoxContainer/Row_1"]
+[node name="Slot_2" type="VBoxContainer" parent="fridgeInventory/rowContainer/Row_1" groups=["fridgeInvSlots"]]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="TextureRect2" type="TextureRect" parent="fridgeInventory/VBoxContainer/Row_1/VBoxContainer2"]
+[node name="TextureRect2" type="TextureRect" parent="fridgeInventory/rowContainer/Row_1/Slot_2"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 texture = SubResource("CanvasTexture_q85f0")
 expand_mode = 4
 
-[node name="Label" type="Label" parent="fridgeInventory/VBoxContainer/Row_1/VBoxContainer2"]
+[node name="Label" type="Label" parent="fridgeInventory/rowContainer/Row_1/Slot_2"]
 layout_mode = 2
 text = "Item 2"
 horizontal_alignment = 1
 
-[node name="VBoxContainer3" type="VBoxContainer" parent="fridgeInventory/VBoxContainer/Row_1"]
+[node name="Slot_3" type="VBoxContainer" parent="fridgeInventory/rowContainer/Row_1" groups=["fridgeInvSlots"]]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="TextureRect3" type="TextureRect" parent="fridgeInventory/VBoxContainer/Row_1/VBoxContainer3"]
+[node name="TextureRect3" type="TextureRect" parent="fridgeInventory/rowContainer/Row_1/Slot_3"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 texture = SubResource("CanvasTexture_q85f0")
 expand_mode = 4
 
-[node name="Label" type="Label" parent="fridgeInventory/VBoxContainer/Row_1/VBoxContainer3"]
+[node name="Label" type="Label" parent="fridgeInventory/rowContainer/Row_1/Slot_3"]
 layout_mode = 2
 text = "Item 3"
 horizontal_alignment = 1
 
-[node name="VBoxContainer4" type="VBoxContainer" parent="fridgeInventory/VBoxContainer/Row_1"]
+[node name="Slot_4" type="VBoxContainer" parent="fridgeInventory/rowContainer/Row_1" groups=["fridgeInvSlots"]]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="TextureRect4" type="TextureRect" parent="fridgeInventory/VBoxContainer/Row_1/VBoxContainer4"]
+[node name="TextureRect4" type="TextureRect" parent="fridgeInventory/rowContainer/Row_1/Slot_4"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 texture = SubResource("CanvasTexture_q85f0")
 expand_mode = 4
 
-[node name="Label" type="Label" parent="fridgeInventory/VBoxContainer/Row_1/VBoxContainer4"]
+[node name="Label" type="Label" parent="fridgeInventory/rowContainer/Row_1/Slot_4"]
 layout_mode = 2
 text = "Item 4"
 horizontal_alignment = 1
 
-[node name="Row_2" type="HBoxContainer" parent="fridgeInventory/VBoxContainer"]
+[node name="Row_2" type="HBoxContainer" parent="fridgeInventory/rowContainer"]
 layout_mode = 2
 size_flags_vertical = 0
 
-[node name="VBoxContainer" type="VBoxContainer" parent="fridgeInventory/VBoxContainer/Row_2"]
+[node name="Slot_5" type="VBoxContainer" parent="fridgeInventory/rowContainer/Row_2" groups=["fridgeInvSlots"]]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="TextureRect" type="TextureRect" parent="fridgeInventory/VBoxContainer/Row_2/VBoxContainer"]
+[node name="TextureRect" type="TextureRect" parent="fridgeInventory/rowContainer/Row_2/Slot_5"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 texture = SubResource("CanvasTexture_q85f0")
 expand_mode = 4
 
-[node name="Label" type="Label" parent="fridgeInventory/VBoxContainer/Row_2/VBoxContainer"]
+[node name="Label" type="Label" parent="fridgeInventory/rowContainer/Row_2/Slot_5"]
 layout_mode = 2
 text = "Item 5"
 horizontal_alignment = 1
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="fridgeInventory/VBoxContainer/Row_2"]
+[node name="Slot_6" type="VBoxContainer" parent="fridgeInventory/rowContainer/Row_2" groups=["fridgeInvSlots"]]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="TextureRect2" type="TextureRect" parent="fridgeInventory/VBoxContainer/Row_2/VBoxContainer2"]
+[node name="TextureRect2" type="TextureRect" parent="fridgeInventory/rowContainer/Row_2/Slot_6"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 texture = SubResource("CanvasTexture_q85f0")
 expand_mode = 4
 
-[node name="Label" type="Label" parent="fridgeInventory/VBoxContainer/Row_2/VBoxContainer2"]
+[node name="Label" type="Label" parent="fridgeInventory/rowContainer/Row_2/Slot_6"]
 layout_mode = 2
 text = "Item 6"
 horizontal_alignment = 1
 
-[node name="VBoxContainer3" type="VBoxContainer" parent="fridgeInventory/VBoxContainer/Row_2"]
+[node name="Slot_7" type="VBoxContainer" parent="fridgeInventory/rowContainer/Row_2" groups=["fridgeInvSlots"]]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="TextureRect3" type="TextureRect" parent="fridgeInventory/VBoxContainer/Row_2/VBoxContainer3"]
+[node name="TextureRect3" type="TextureRect" parent="fridgeInventory/rowContainer/Row_2/Slot_7"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 texture = SubResource("CanvasTexture_q85f0")
 expand_mode = 4
 
-[node name="Label" type="Label" parent="fridgeInventory/VBoxContainer/Row_2/VBoxContainer3"]
+[node name="Label" type="Label" parent="fridgeInventory/rowContainer/Row_2/Slot_7"]
 layout_mode = 2
 text = "Item 7"
 horizontal_alignment = 1
 
-[node name="VBoxContainer4" type="VBoxContainer" parent="fridgeInventory/VBoxContainer/Row_2"]
+[node name="Slot_8" type="VBoxContainer" parent="fridgeInventory/rowContainer/Row_2" groups=["fridgeInvSlots"]]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="TextureRect4" type="TextureRect" parent="fridgeInventory/VBoxContainer/Row_2/VBoxContainer4"]
+[node name="TextureRect4" type="TextureRect" parent="fridgeInventory/rowContainer/Row_2/Slot_8"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 texture = SubResource("CanvasTexture_q85f0")
 expand_mode = 4
 
-[node name="Label" type="Label" parent="fridgeInventory/VBoxContainer/Row_2/VBoxContainer4"]
+[node name="Label" type="Label" parent="fridgeInventory/rowContainer/Row_2/Slot_8"]
 layout_mode = 2
 text = "Item 8"
 horizontal_alignment = 1
 
-[node name="Row_3" type="HBoxContainer" parent="fridgeInventory/VBoxContainer"]
+[node name="Row_3" type="HBoxContainer" parent="fridgeInventory/rowContainer"]
 layout_mode = 2
 size_flags_vertical = 0
 
-[node name="VBoxContainer" type="VBoxContainer" parent="fridgeInventory/VBoxContainer/Row_3"]
+[node name="Slot_9" type="VBoxContainer" parent="fridgeInventory/rowContainer/Row_3" groups=["fridgeInvSlots"]]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="TextureRect" type="TextureRect" parent="fridgeInventory/VBoxContainer/Row_3/VBoxContainer"]
+[node name="TextureRect" type="TextureRect" parent="fridgeInventory/rowContainer/Row_3/Slot_9"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 texture = SubResource("CanvasTexture_q85f0")
 expand_mode = 4
 
-[node name="Label" type="Label" parent="fridgeInventory/VBoxContainer/Row_3/VBoxContainer"]
+[node name="Label" type="Label" parent="fridgeInventory/rowContainer/Row_3/Slot_9"]
 layout_mode = 2
 text = "Item 9"
 horizontal_alignment = 1
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="fridgeInventory/VBoxContainer/Row_3"]
+[node name="Slot_10" type="VBoxContainer" parent="fridgeInventory/rowContainer/Row_3" groups=["fridgeInvSlots"]]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="TextureRect2" type="TextureRect" parent="fridgeInventory/VBoxContainer/Row_3/VBoxContainer2"]
+[node name="TextureRect2" type="TextureRect" parent="fridgeInventory/rowContainer/Row_3/Slot_10"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 texture = SubResource("CanvasTexture_q85f0")
 expand_mode = 4
 
-[node name="Label" type="Label" parent="fridgeInventory/VBoxContainer/Row_3/VBoxContainer2"]
+[node name="Label" type="Label" parent="fridgeInventory/rowContainer/Row_3/Slot_10"]
 layout_mode = 2
 text = "Item 10"
 horizontal_alignment = 1
 
-[node name="VBoxContainer3" type="VBoxContainer" parent="fridgeInventory/VBoxContainer/Row_3"]
+[node name="Slot_11" type="VBoxContainer" parent="fridgeInventory/rowContainer/Row_3" groups=["fridgeInvSlots"]]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="TextureRect3" type="TextureRect" parent="fridgeInventory/VBoxContainer/Row_3/VBoxContainer3"]
+[node name="TextureRect3" type="TextureRect" parent="fridgeInventory/rowContainer/Row_3/Slot_11"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 texture = SubResource("CanvasTexture_q85f0")
 expand_mode = 4
 
-[node name="Label" type="Label" parent="fridgeInventory/VBoxContainer/Row_3/VBoxContainer3"]
+[node name="Label" type="Label" parent="fridgeInventory/rowContainer/Row_3/Slot_11"]
 layout_mode = 2
 text = "Item 11"
 horizontal_alignment = 1
 
-[node name="VBoxContainer4" type="VBoxContainer" parent="fridgeInventory/VBoxContainer/Row_3"]
+[node name="Slot_12" type="VBoxContainer" parent="fridgeInventory/rowContainer/Row_3" groups=["fridgeInvSlots"]]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="TextureRect4" type="TextureRect" parent="fridgeInventory/VBoxContainer/Row_3/VBoxContainer4"]
+[node name="TextureRect4" type="TextureRect" parent="fridgeInventory/rowContainer/Row_3/Slot_12"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 texture = SubResource("CanvasTexture_q85f0")
 expand_mode = 4
 
-[node name="Label" type="Label" parent="fridgeInventory/VBoxContainer/Row_3/VBoxContainer4"]
+[node name="Label" type="Label" parent="fridgeInventory/rowContainer/Row_3/Slot_12"]
 layout_mode = 2
 text = "Item 12"
 horizontal_alignment = 1
@@ -235,238 +235,238 @@ scale = Vector2(0.5, 0.442)
 size_flags_horizontal = 3
 script = ExtResource("1_5oaki")
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="playerInventory"]
+[node name="playerInvContainer" type="VBoxContainer" parent="playerInventory"]
 layout_mode = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="playerInventory/VBoxContainer2"]
+[node name="rowContainer" type="VBoxContainer" parent="playerInventory/playerInvContainer"]
 layout_mode = 2
 size_flags_vertical = 0
 size_flags_stretch_ratio = 10.0
 
-[node name="Row_1" type="HBoxContainer" parent="playerInventory/VBoxContainer2/VBoxContainer"]
+[node name="Row_1" type="HBoxContainer" parent="playerInventory/playerInvContainer/rowContainer"]
 layout_mode = 2
 size_flags_vertical = 0
 
-[node name="VBoxContainer" type="VBoxContainer" parent="playerInventory/VBoxContainer2/VBoxContainer/Row_1"]
+[node name="Slot_1" type="VBoxContainer" parent="playerInventory/playerInvContainer/rowContainer/Row_1" groups=["playerInvSlots"]]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="TextureRect" type="TextureRect" parent="playerInventory/VBoxContainer2/VBoxContainer/Row_1/VBoxContainer"]
+[node name="TextureRect" type="TextureRect" parent="playerInventory/playerInvContainer/rowContainer/Row_1/Slot_1"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 texture = SubResource("CanvasTexture_q85f0")
 expand_mode = 4
 
-[node name="Label" type="Label" parent="playerInventory/VBoxContainer2/VBoxContainer/Row_1/VBoxContainer"]
+[node name="Label" type="Label" parent="playerInventory/playerInvContainer/rowContainer/Row_1/Slot_1"]
 layout_mode = 2
 text = "Item 1"
 horizontal_alignment = 1
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="playerInventory/VBoxContainer2/VBoxContainer/Row_1"]
+[node name="Slot_2" type="VBoxContainer" parent="playerInventory/playerInvContainer/rowContainer/Row_1" groups=["playerInvSlots"]]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="TextureRect2" type="TextureRect" parent="playerInventory/VBoxContainer2/VBoxContainer/Row_1/VBoxContainer2"]
+[node name="TextureRect2" type="TextureRect" parent="playerInventory/playerInvContainer/rowContainer/Row_1/Slot_2"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 texture = SubResource("CanvasTexture_q85f0")
 expand_mode = 4
 
-[node name="Label" type="Label" parent="playerInventory/VBoxContainer2/VBoxContainer/Row_1/VBoxContainer2"]
+[node name="Label" type="Label" parent="playerInventory/playerInvContainer/rowContainer/Row_1/Slot_2"]
 layout_mode = 2
 text = "Item 2"
 horizontal_alignment = 1
 
-[node name="VBoxContainer3" type="VBoxContainer" parent="playerInventory/VBoxContainer2/VBoxContainer/Row_1"]
+[node name="Slot_3" type="VBoxContainer" parent="playerInventory/playerInvContainer/rowContainer/Row_1" groups=["playerInvSlots"]]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="TextureRect3" type="TextureRect" parent="playerInventory/VBoxContainer2/VBoxContainer/Row_1/VBoxContainer3"]
+[node name="TextureRect3" type="TextureRect" parent="playerInventory/playerInvContainer/rowContainer/Row_1/Slot_3"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 texture = SubResource("CanvasTexture_q85f0")
 expand_mode = 4
 
-[node name="Label" type="Label" parent="playerInventory/VBoxContainer2/VBoxContainer/Row_1/VBoxContainer3"]
+[node name="Label" type="Label" parent="playerInventory/playerInvContainer/rowContainer/Row_1/Slot_3"]
 layout_mode = 2
 text = "Item 3"
 horizontal_alignment = 1
 
-[node name="VBoxContainer4" type="VBoxContainer" parent="playerInventory/VBoxContainer2/VBoxContainer/Row_1"]
+[node name="Slot_4" type="VBoxContainer" parent="playerInventory/playerInvContainer/rowContainer/Row_1" groups=["playerInvSlots"]]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="TextureRect4" type="TextureRect" parent="playerInventory/VBoxContainer2/VBoxContainer/Row_1/VBoxContainer4"]
+[node name="TextureRect4" type="TextureRect" parent="playerInventory/playerInvContainer/rowContainer/Row_1/Slot_4"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 texture = SubResource("CanvasTexture_q85f0")
 expand_mode = 4
 
-[node name="Label" type="Label" parent="playerInventory/VBoxContainer2/VBoxContainer/Row_1/VBoxContainer4"]
+[node name="Label" type="Label" parent="playerInventory/playerInvContainer/rowContainer/Row_1/Slot_4"]
 layout_mode = 2
 text = "Item 4"
 horizontal_alignment = 1
 
-[node name="Row_2" type="HBoxContainer" parent="playerInventory/VBoxContainer2/VBoxContainer"]
+[node name="Row_2" type="HBoxContainer" parent="playerInventory/playerInvContainer/rowContainer"]
 layout_mode = 2
 size_flags_vertical = 0
 
-[node name="VBoxContainer" type="VBoxContainer" parent="playerInventory/VBoxContainer2/VBoxContainer/Row_2"]
+[node name="Slot_5" type="VBoxContainer" parent="playerInventory/playerInvContainer/rowContainer/Row_2" groups=["playerInvSlots"]]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="TextureRect" type="TextureRect" parent="playerInventory/VBoxContainer2/VBoxContainer/Row_2/VBoxContainer"]
+[node name="TextureRect" type="TextureRect" parent="playerInventory/playerInvContainer/rowContainer/Row_2/Slot_5"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 texture = SubResource("CanvasTexture_q85f0")
 expand_mode = 4
 
-[node name="Label" type="Label" parent="playerInventory/VBoxContainer2/VBoxContainer/Row_2/VBoxContainer"]
+[node name="Label" type="Label" parent="playerInventory/playerInvContainer/rowContainer/Row_2/Slot_5"]
 layout_mode = 2
 text = "Item 5"
 horizontal_alignment = 1
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="playerInventory/VBoxContainer2/VBoxContainer/Row_2"]
+[node name="Slot_6" type="VBoxContainer" parent="playerInventory/playerInvContainer/rowContainer/Row_2" groups=["playerInvSlots"]]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="TextureRect2" type="TextureRect" parent="playerInventory/VBoxContainer2/VBoxContainer/Row_2/VBoxContainer2"]
+[node name="TextureRect2" type="TextureRect" parent="playerInventory/playerInvContainer/rowContainer/Row_2/Slot_6"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 texture = SubResource("CanvasTexture_q85f0")
 expand_mode = 4
 
-[node name="Label" type="Label" parent="playerInventory/VBoxContainer2/VBoxContainer/Row_2/VBoxContainer2"]
+[node name="Label" type="Label" parent="playerInventory/playerInvContainer/rowContainer/Row_2/Slot_6"]
 layout_mode = 2
 text = "Item 6"
 horizontal_alignment = 1
 
-[node name="VBoxContainer3" type="VBoxContainer" parent="playerInventory/VBoxContainer2/VBoxContainer/Row_2"]
+[node name="Slot_7" type="VBoxContainer" parent="playerInventory/playerInvContainer/rowContainer/Row_2" groups=["playerInvSlots"]]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="TextureRect3" type="TextureRect" parent="playerInventory/VBoxContainer2/VBoxContainer/Row_2/VBoxContainer3"]
+[node name="TextureRect3" type="TextureRect" parent="playerInventory/playerInvContainer/rowContainer/Row_2/Slot_7"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 texture = SubResource("CanvasTexture_q85f0")
 expand_mode = 4
 
-[node name="Label" type="Label" parent="playerInventory/VBoxContainer2/VBoxContainer/Row_2/VBoxContainer3"]
+[node name="Label" type="Label" parent="playerInventory/playerInvContainer/rowContainer/Row_2/Slot_7"]
 layout_mode = 2
 text = "Item 7"
 horizontal_alignment = 1
 
-[node name="VBoxContainer4" type="VBoxContainer" parent="playerInventory/VBoxContainer2/VBoxContainer/Row_2"]
+[node name="Slot_8" type="VBoxContainer" parent="playerInventory/playerInvContainer/rowContainer/Row_2" groups=["playerInvSlots"]]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="TextureRect4" type="TextureRect" parent="playerInventory/VBoxContainer2/VBoxContainer/Row_2/VBoxContainer4"]
+[node name="TextureRect4" type="TextureRect" parent="playerInventory/playerInvContainer/rowContainer/Row_2/Slot_8"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 texture = SubResource("CanvasTexture_q85f0")
 expand_mode = 4
 
-[node name="Label" type="Label" parent="playerInventory/VBoxContainer2/VBoxContainer/Row_2/VBoxContainer4"]
+[node name="Label" type="Label" parent="playerInventory/playerInvContainer/rowContainer/Row_2/Slot_8"]
 layout_mode = 2
 text = "Item 8"
 horizontal_alignment = 1
 
-[node name="Row_3" type="HBoxContainer" parent="playerInventory/VBoxContainer2/VBoxContainer"]
+[node name="Row_3" type="HBoxContainer" parent="playerInventory/playerInvContainer/rowContainer"]
 layout_mode = 2
 size_flags_vertical = 0
 
-[node name="VBoxContainer" type="VBoxContainer" parent="playerInventory/VBoxContainer2/VBoxContainer/Row_3"]
+[node name="Slot_9" type="VBoxContainer" parent="playerInventory/playerInvContainer/rowContainer/Row_3" groups=["playerInvSlots"]]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="TextureRect" type="TextureRect" parent="playerInventory/VBoxContainer2/VBoxContainer/Row_3/VBoxContainer"]
+[node name="TextureRect" type="TextureRect" parent="playerInventory/playerInvContainer/rowContainer/Row_3/Slot_9"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 texture = SubResource("CanvasTexture_q85f0")
 expand_mode = 4
 
-[node name="Label" type="Label" parent="playerInventory/VBoxContainer2/VBoxContainer/Row_3/VBoxContainer"]
+[node name="Label" type="Label" parent="playerInventory/playerInvContainer/rowContainer/Row_3/Slot_9"]
 layout_mode = 2
 text = "Item 9"
 horizontal_alignment = 1
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="playerInventory/VBoxContainer2/VBoxContainer/Row_3"]
+[node name="Slot_10" type="VBoxContainer" parent="playerInventory/playerInvContainer/rowContainer/Row_3" groups=["playerInvSlots"]]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="TextureRect2" type="TextureRect" parent="playerInventory/VBoxContainer2/VBoxContainer/Row_3/VBoxContainer2"]
+[node name="TextureRect2" type="TextureRect" parent="playerInventory/playerInvContainer/rowContainer/Row_3/Slot_10"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 texture = SubResource("CanvasTexture_q85f0")
 expand_mode = 4
 
-[node name="Label" type="Label" parent="playerInventory/VBoxContainer2/VBoxContainer/Row_3/VBoxContainer2"]
+[node name="Label" type="Label" parent="playerInventory/playerInvContainer/rowContainer/Row_3/Slot_10"]
 layout_mode = 2
 text = "Item 10"
 horizontal_alignment = 1
 
-[node name="VBoxContainer3" type="VBoxContainer" parent="playerInventory/VBoxContainer2/VBoxContainer/Row_3"]
+[node name="Slot_11" type="VBoxContainer" parent="playerInventory/playerInvContainer/rowContainer/Row_3" groups=["playerInvSlots"]]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="TextureRect3" type="TextureRect" parent="playerInventory/VBoxContainer2/VBoxContainer/Row_3/VBoxContainer3"]
+[node name="TextureRect3" type="TextureRect" parent="playerInventory/playerInvContainer/rowContainer/Row_3/Slot_11"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 texture = SubResource("CanvasTexture_q85f0")
 expand_mode = 4
 
-[node name="Label" type="Label" parent="playerInventory/VBoxContainer2/VBoxContainer/Row_3/VBoxContainer3"]
+[node name="Label" type="Label" parent="playerInventory/playerInvContainer/rowContainer/Row_3/Slot_11"]
 layout_mode = 2
 text = "Item 11"
 horizontal_alignment = 1
 
-[node name="VBoxContainer4" type="VBoxContainer" parent="playerInventory/VBoxContainer2/VBoxContainer/Row_3"]
+[node name="Slot_12" type="VBoxContainer" parent="playerInventory/playerInvContainer/rowContainer/Row_3" groups=["playerInvSlots"]]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="TextureRect4" type="TextureRect" parent="playerInventory/VBoxContainer2/VBoxContainer/Row_3/VBoxContainer4"]
+[node name="TextureRect4" type="TextureRect" parent="playerInventory/playerInvContainer/rowContainer/Row_3/Slot_12"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 texture = SubResource("CanvasTexture_q85f0")
 expand_mode = 4
 
-[node name="Label" type="Label" parent="playerInventory/VBoxContainer2/VBoxContainer/Row_3/VBoxContainer4"]
+[node name="Label" type="Label" parent="playerInventory/playerInvContainer/rowContainer/Row_3/Slot_12"]
 layout_mode = 2
 text = "Item 12"
 horizontal_alignment = 1
 
-[node name="Spacer" type="HBoxContainer" parent="playerInventory/VBoxContainer2"]
+[node name="Spacer" type="HBoxContainer" parent="playerInventory/playerInvContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="Spacer" type="Label" parent="playerInventory/VBoxContainer2/Spacer"]
+[node name="Spacer" type="Label" parent="playerInventory/playerInvContainer/Spacer"]
 layout_mode = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="playerInventory/VBoxContainer2"]
+[node name="HBoxContainer" type="HBoxContainer" parent="playerInventory/playerInvContainer"]
 layout_mode = 2
 
-[node name="Money" type="Label" parent="playerInventory/VBoxContainer2/HBoxContainer"]
+[node name="Money" type="Label" parent="playerInventory/playerInvContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Money:"
 
-[node name="Spacer" type="Control" parent="playerInventory/VBoxContainer2/HBoxContainer"]
+[node name="Spacer" type="Control" parent="playerInventory/playerInvContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="MoneyVal" type="Label" parent="playerInventory/VBoxContainer2/HBoxContainer"]
+[node name="MoneyVal" type="Label" parent="playerInventory/playerInvContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "9999999999"
