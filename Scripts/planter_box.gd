@@ -44,7 +44,7 @@ func addPlant():
 		if index == 2:
 			planterInventory[2].position.x = int(plant_instance.position.x - 40)
 			
-		plant_instance.startGrowth(soilQuality, waterLevel, lightExposure, "Carrot")
+		plant_instance.startGrowth(soilQuality, waterLevel, lightExposure, "Carrots")
 	
 		if planterInventory.find(null) == -1:
 			interactable.isInteractable = false
