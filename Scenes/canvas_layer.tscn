@@ -1,37 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://dh7opgs4rrdd1"]
 
 [ext_resource type="Script" uid="uid://bee18ifuivf3o" path="res://Scripts/canvas_layer.gd" id="1_q85f0"]
-
-[sub_resource type="GDScript" id="GDScript_5oaki"]
-script/source = "extends Control
-
-#
-#@onready var grid = $Panel/GridContainer
-#var SlotScene = preload(\"res://Scenes/item_slot.tscn\")
-#@export var items = [
-	#{\"name\": \"plant1\", \"icon\": preload(\"res://Assets/UI/icons/plant1.png\")},
-	#{\"name\": \"plant2\", \"icon\": preload(\"res://Assets/UI/icons/plant2.png\")},
-	#{\"name\": \"plant3\", \"icon\": preload(\"res://Assets/UI/icons/plant3.png\")},
-#]
-#
-#func add_item(name: String, icon: Texture):
-	#var slot = SlotScene.instantiate()
-	#slot.add_item(name, icon)
-	#grid.add_child(slot)
-	#
-#func _ready():
-	#self.add_theme_color_override(\"panel\", Color(0.1, 0.1, 0.1, 0.3))
-	##populate_inventory()
-#
-	#
-#func populate_inventory():
-	#print(grid)
-	##for item in items:
-		##var slot = SlotScene.instantiate()
-		##grid.add_child(slot)
-		##slot.set_item(item[\"name\"], item[\"icon\"])
-		##print(grid)
-"
+[ext_resource type="Script" uid="uid://b3ad73ufs6dw3" path="res://Scripts/slot.gd" id="2_p1mel"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_q85f0"]
 specular_color = Color(0.629675, 0.629675, 0.629675, 1)
@@ -46,7 +16,6 @@ offset_right = 638.0
 offset_bottom = 479.0
 scale = Vector2(0.5, 0.442)
 size_flags_horizontal = 3
-script = SubResource("GDScript_5oaki")
 
 [node name="rowContainer" type="VBoxContainer" parent="fridgeInventory"]
 layout_mode = 2
@@ -257,13 +226,11 @@ text = "Item 12"
 horizontal_alignment = 1
 
 [node name="playerInventory" type="PanelContainer" parent="."]
-visible = false
 z_index = 1
 offset_right = 638.0
 offset_bottom = 479.0
 scale = Vector2(0.5, 0.442)
 size_flags_horizontal = 3
-script = SubResource("GDScript_5oaki")
 
 [node name="playerInvContainer" type="VBoxContainer" parent="playerInventory"]
 layout_mode = 2
@@ -280,6 +247,8 @@ size_flags_vertical = 0
 [node name="Slot_1" type="VBoxContainer" parent="playerInventory/playerInvContainer/rowContainer/Row_1" groups=["playerInvSlots"]]
 layout_mode = 2
 size_flags_horizontal = 3
+size_flags_stretch_ratio = 1.05
+script = ExtResource("2_p1mel")
 
 [node name="TextureRect" type="TextureRect" parent="playerInventory/playerInvContainer/rowContainer/Row_1/Slot_1"]
 layout_mode = 2
@@ -296,8 +265,10 @@ horizontal_alignment = 1
 [node name="Slot_2" type="VBoxContainer" parent="playerInventory/playerInvContainer/rowContainer/Row_1" groups=["playerInvSlots"]]
 layout_mode = 2
 size_flags_horizontal = 3
+size_flags_stretch_ratio = 1.05
+script = ExtResource("2_p1mel")
 
-[node name="TextureRect2" type="TextureRect" parent="playerInventory/playerInvContainer/rowContainer/Row_1/Slot_2"]
+[node name="TextureRect" type="TextureRect" parent="playerInventory/playerInvContainer/rowContainer/Row_1/Slot_2"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -306,14 +277,16 @@ expand_mode = 4
 
 [node name="Label" type="Label" parent="playerInventory/playerInvContainer/rowContainer/Row_1/Slot_2"]
 layout_mode = 2
-text = "Item 2"
+text = "Item 1"
 horizontal_alignment = 1
 
 [node name="Slot_3" type="VBoxContainer" parent="playerInventory/playerInvContainer/rowContainer/Row_1" groups=["playerInvSlots"]]
 layout_mode = 2
 size_flags_horizontal = 3
+size_flags_stretch_ratio = 1.05
+script = ExtResource("2_p1mel")
 
-[node name="TextureRect3" type="TextureRect" parent="playerInventory/playerInvContainer/rowContainer/Row_1/Slot_3"]
+[node name="TextureRect" type="TextureRect" parent="playerInventory/playerInvContainer/rowContainer/Row_1/Slot_3"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -322,14 +295,16 @@ expand_mode = 4
 
 [node name="Label" type="Label" parent="playerInventory/playerInvContainer/rowContainer/Row_1/Slot_3"]
 layout_mode = 2
-text = "Item 3"
+text = "Item 1"
 horizontal_alignment = 1
 
 [node name="Slot_4" type="VBoxContainer" parent="playerInventory/playerInvContainer/rowContainer/Row_1" groups=["playerInvSlots"]]
 layout_mode = 2
 size_flags_horizontal = 3
+size_flags_stretch_ratio = 1.05
+script = ExtResource("2_p1mel")
 
-[node name="TextureRect4" type="TextureRect" parent="playerInventory/playerInvContainer/rowContainer/Row_1/Slot_4"]
+[node name="TextureRect" type="TextureRect" parent="playerInventory/playerInvContainer/rowContainer/Row_1/Slot_4"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -338,7 +313,7 @@ expand_mode = 4
 
 [node name="Label" type="Label" parent="playerInventory/playerInvContainer/rowContainer/Row_1/Slot_4"]
 layout_mode = 2
-text = "Item 4"
+text = "Item 1"
 horizontal_alignment = 1
 
 [node name="Row_2" type="HBoxContainer" parent="playerInventory/playerInvContainer/rowContainer"]
@@ -348,6 +323,8 @@ size_flags_vertical = 0
 [node name="Slot_5" type="VBoxContainer" parent="playerInventory/playerInvContainer/rowContainer/Row_2" groups=["playerInvSlots"]]
 layout_mode = 2
 size_flags_horizontal = 3
+size_flags_stretch_ratio = 1.05
+script = ExtResource("2_p1mel")
 
 [node name="TextureRect" type="TextureRect" parent="playerInventory/playerInvContainer/rowContainer/Row_2/Slot_5"]
 layout_mode = 2
@@ -358,14 +335,16 @@ expand_mode = 4
 
 [node name="Label" type="Label" parent="playerInventory/playerInvContainer/rowContainer/Row_2/Slot_5"]
 layout_mode = 2
-text = "Item 5"
+text = "Item 1"
 horizontal_alignment = 1
 
 [node name="Slot_6" type="VBoxContainer" parent="playerInventory/playerInvContainer/rowContainer/Row_2" groups=["playerInvSlots"]]
 layout_mode = 2
 size_flags_horizontal = 3
+size_flags_stretch_ratio = 1.05
+script = ExtResource("2_p1mel")
 
-[node name="TextureRect2" type="TextureRect" parent="playerInventory/playerInvContainer/rowContainer/Row_2/Slot_6"]
+[node name="TextureRect" type="TextureRect" parent="playerInventory/playerInvContainer/rowContainer/Row_2/Slot_6"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -374,14 +353,16 @@ expand_mode = 4
 
 [node name="Label" type="Label" parent="playerInventory/playerInvContainer/rowContainer/Row_2/Slot_6"]
 layout_mode = 2
-text = "Item 6"
+text = "Item 1"
 horizontal_alignment = 1
 
 [node name="Slot_7" type="VBoxContainer" parent="playerInventory/playerInvContainer/rowContainer/Row_2" groups=["playerInvSlots"]]
 layout_mode = 2
 size_flags_horizontal = 3
+size_flags_stretch_ratio = 1.05
+script = ExtResource("2_p1mel")
 
-[node name="TextureRect3" type="TextureRect" parent="playerInventory/playerInvContainer/rowContainer/Row_2/Slot_7"]
+[node name="TextureRect" type="TextureRect" parent="playerInventory/playerInvContainer/rowContainer/Row_2/Slot_7"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -390,14 +371,16 @@ expand_mode = 4
 
 [node name="Label" type="Label" parent="playerInventory/playerInvContainer/rowContainer/Row_2/Slot_7"]
 layout_mode = 2
-text = "Item 7"
+text = "Item 1"
 horizontal_alignment = 1
 
 [node name="Slot_8" type="VBoxContainer" parent="playerInventory/playerInvContainer/rowContainer/Row_2" groups=["playerInvSlots"]]
 layout_mode = 2
 size_flags_horizontal = 3
+size_flags_stretch_ratio = 1.05
+script = ExtResource("2_p1mel")
 
-[node name="TextureRect4" type="TextureRect" parent="playerInventory/playerInvContainer/rowContainer/Row_2/Slot_8"]
+[node name="TextureRect" type="TextureRect" parent="playerInventory/playerInvContainer/rowContainer/Row_2/Slot_8"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -406,7 +389,7 @@ expand_mode = 4
 
 [node name="Label" type="Label" parent="playerInventory/playerInvContainer/rowContainer/Row_2/Slot_8"]
 layout_mode = 2
-text = "Item 8"
+text = "Item 1"
 horizontal_alignment = 1
 
 [node name="Row_3" type="HBoxContainer" parent="playerInventory/playerInvContainer/rowContainer"]
@@ -416,6 +399,8 @@ size_flags_vertical = 0
 [node name="Slot_9" type="VBoxContainer" parent="playerInventory/playerInvContainer/rowContainer/Row_3" groups=["playerInvSlots"]]
 layout_mode = 2
 size_flags_horizontal = 3
+size_flags_stretch_ratio = 1.05
+script = ExtResource("2_p1mel")
 
 [node name="TextureRect" type="TextureRect" parent="playerInventory/playerInvContainer/rowContainer/Row_3/Slot_9"]
 layout_mode = 2
@@ -426,14 +411,16 @@ expand_mode = 4
 
 [node name="Label" type="Label" parent="playerInventory/playerInvContainer/rowContainer/Row_3/Slot_9"]
 layout_mode = 2
-text = "Item 9"
+text = "Item 1"
 horizontal_alignment = 1
 
 [node name="Slot_10" type="VBoxContainer" parent="playerInventory/playerInvContainer/rowContainer/Row_3" groups=["playerInvSlots"]]
 layout_mode = 2
 size_flags_horizontal = 3
+size_flags_stretch_ratio = 1.05
+script = ExtResource("2_p1mel")
 
-[node name="TextureRect2" type="TextureRect" parent="playerInventory/playerInvContainer/rowContainer/Row_3/Slot_10"]
+[node name="TextureRect" type="TextureRect" parent="playerInventory/playerInvContainer/rowContainer/Row_3/Slot_10"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -442,14 +429,16 @@ expand_mode = 4
 
 [node name="Label" type="Label" parent="playerInventory/playerInvContainer/rowContainer/Row_3/Slot_10"]
 layout_mode = 2
-text = "Item 10"
+text = "Item 1"
 horizontal_alignment = 1
 
 [node name="Slot_11" type="VBoxContainer" parent="playerInventory/playerInvContainer/rowContainer/Row_3" groups=["playerInvSlots"]]
 layout_mode = 2
 size_flags_horizontal = 3
+size_flags_stretch_ratio = 1.05
+script = ExtResource("2_p1mel")
 
-[node name="TextureRect3" type="TextureRect" parent="playerInventory/playerInvContainer/rowContainer/Row_3/Slot_11"]
+[node name="TextureRect" type="TextureRect" parent="playerInventory/playerInvContainer/rowContainer/Row_3/Slot_11"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -458,14 +447,16 @@ expand_mode = 4
 
 [node name="Label" type="Label" parent="playerInventory/playerInvContainer/rowContainer/Row_3/Slot_11"]
 layout_mode = 2
-text = "Item 11"
+text = "Item 1"
 horizontal_alignment = 1
 
 [node name="Slot_12" type="VBoxContainer" parent="playerInventory/playerInvContainer/rowContainer/Row_3" groups=["playerInvSlots"]]
 layout_mode = 2
 size_flags_horizontal = 3
+size_flags_stretch_ratio = 1.05
+script = ExtResource("2_p1mel")
 
-[node name="TextureRect4" type="TextureRect" parent="playerInventory/playerInvContainer/rowContainer/Row_3/Slot_12"]
+[node name="TextureRect" type="TextureRect" parent="playerInventory/playerInvContainer/rowContainer/Row_3/Slot_12"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -474,7 +465,7 @@ expand_mode = 4
 
 [node name="Label" type="Label" parent="playerInventory/playerInvContainer/rowContainer/Row_3/Slot_12"]
 layout_mode = 2
-text = "Item 12"
+text = "Item 1"
 horizontal_alignment = 1
 
 [node name="Spacer" type="HBoxContainer" parent="playerInventory/playerInvContainer"]
@@ -501,3 +492,40 @@ layout_mode = 2
 size_flags_horizontal = 3
 text = "9999999999"
 horizontal_alignment = 2
+
+[connection signal="gui_input" from="playerInventory/playerInvContainer/rowContainer/Row_1/Slot_1/TextureRect" to="playerInventory/playerInvContainer/rowContainer/Row_1/Slot_1" method="_on_texture_rect_gui_input"]
+[connection signal="mouse_entered" from="playerInventory/playerInvContainer/rowContainer/Row_1/Slot_1/TextureRect" to="playerInventory/playerInvContainer/rowContainer/Row_1/Slot_1" method="_on_texture_rect_mouse_entered"]
+[connection signal="mouse_exited" from="playerInventory/playerInvContainer/rowContainer/Row_1/Slot_1/TextureRect" to="playerInventory/playerInvContainer/rowContainer/Row_1/Slot_1" method="_on_texture_rect_mouse_exited"]
+[connection signal="gui_input" from="playerInventory/playerInvContainer/rowContainer/Row_1/Slot_2/TextureRect" to="playerInventory/playerInvContainer/rowContainer/Row_1/Slot_2" method="_on_texture_rect_gui_input"]
+[connection signal="mouse_entered" from="playerInventory/playerInvContainer/rowContainer/Row_1/Slot_2/TextureRect" to="playerInventory/playerInvContainer/rowContainer/Row_1/Slot_2" method="_on_texture_rect_mouse_entered"]
+[connection signal="mouse_exited" from="playerInventory/playerInvContainer/rowContainer/Row_1/Slot_2/TextureRect" to="playerInventory/playerInvContainer/rowContainer/Row_1/Slot_2" method="_on_texture_rect_mouse_exited"]
+[connection signal="gui_input" from="playerInventory/playerInvContainer/rowContainer/Row_1/Slot_3/TextureRect" to="playerInventory/playerInvContainer/rowContainer/Row_1/Slot_3" method="_on_texture_rect_gui_input"]
+[connection signal="mouse_entered" from="playerInventory/playerInvContainer/rowContainer/Row_1/Slot_3/TextureRect" to="playerInventory/playerInvContainer/rowContainer/Row_1/Slot_3" method="_on_texture_rect_mouse_entered"]
+[connection signal="mouse_exited" from="playerInventory/playerInvContainer/rowContainer/Row_1/Slot_3/TextureRect" to="playerInventory/playerInvContainer/rowContainer/Row_1/Slot_3" method="_on_texture_rect_mouse_exited"]
+[connection signal="gui_input" from="playerInventory/playerInvContainer/rowContainer/Row_1/Slot_4/TextureRect" to="playerInventory/playerInvContainer/rowContainer/Row_1/Slot_4" method="_on_texture_rect_gui_input"]
+[connection signal="mouse_entered" from="playerInventory/playerInvContainer/rowContainer/Row_1/Slot_4/TextureRect" to="playerInventory/playerInvContainer/rowContainer/Row_1/Slot_4" method="_on_texture_rect_mouse_entered"]
+[connection signal="mouse_exited" from="playerInventory/playerInvContainer/rowContainer/Row_1/Slot_4/TextureRect" to="playerInventory/playerInvContainer/rowContainer/Row_1/Slot_4" method="_on_texture_rect_mouse_exited"]
+[connection signal="gui_input" from="playerInventory/playerInvContainer/rowContainer/Row_2/Slot_5/TextureRect" to="playerInventory/playerInvContainer/rowContainer/Row_2/Slot_5" method="_on_texture_rect_gui_input"]
+[connection signal="mouse_entered" from="playerInventory/playerInvContainer/rowContainer/Row_2/Slot_5/TextureRect" to="playerInventory/playerInvContainer/rowContainer/Row_2/Slot_5" method="_on_texture_rect_mouse_entered"]
+[connection signal="mouse_exited" from="playerInventory/playerInvContainer/rowContainer/Row_2/Slot_5/TextureRect" to="playerInventory/playerInvContainer/rowContainer/Row_2/Slot_5" method="_on_texture_rect_mouse_exited"]
+[connection signal="gui_input" from="playerInventory/playerInvContainer/rowContainer/Row_2/Slot_6/TextureRect" to="playerInventory/playerInvContainer/rowContainer/Row_2/Slot_6" method="_on_texture_rect_gui_input"]
+[connection signal="mouse_entered" from="playerInventory/playerInvContainer/rowContainer/Row_2/Slot_6/TextureRect" to="playerInventory/playerInvContainer/rowContainer/Row_2/Slot_6" method="_on_texture_rect_mouse_entered"]
+[connection signal="mouse_exited" from="playerInventory/playerInvContainer/rowContainer/Row_2/Slot_6/TextureRect" to="playerInventory/playerInvContainer/rowContainer/Row_2/Slot_6" method="_on_texture_rect_mouse_exited"]
+[connection signal="gui_input" from="playerInventory/playerInvContainer/rowContainer/Row_2/Slot_7/TextureRect" to="playerInventory/playerInvContainer/rowContainer/Row_2/Slot_7" method="_on_texture_rect_gui_input"]
+[connection signal="mouse_entered" from="playerInventory/playerInvContainer/rowContainer/Row_2/Slot_7/TextureRect" to="playerInventory/playerInvContainer/rowContainer/Row_2/Slot_7" method="_on_texture_rect_mouse_entered"]
+[connection signal="mouse_exited" from="playerInventory/playerInvContainer/rowContainer/Row_2/Slot_7/TextureRect" to="playerInventory/playerInvContainer/rowContainer/Row_2/Slot_7" method="_on_texture_rect_mouse_exited"]
+[connection signal="gui_input" from="playerInventory/playerInvContainer/rowContainer/Row_2/Slot_8/TextureRect" to="playerInventory/playerInvContainer/rowContainer/Row_2/Slot_8" method="_on_texture_rect_gui_input"]
+[connection signal="mouse_entered" from="playerInventory/playerInvContainer/rowContainer/Row_2/Slot_8/TextureRect" to="playerInventory/playerInvContainer/rowContainer/Row_2/Slot_8" method="_on_texture_rect_mouse_entered"]
+[connection signal="mouse_exited" from="playerInventory/playerInvContainer/rowContainer/Row_2/Slot_8/TextureRect" to="playerInventory/playerInvContainer/rowContainer/Row_2/Slot_8" method="_on_texture_rect_mouse_exited"]
+[connection signal="gui_input" from="playerInventory/playerInvContainer/rowContainer/Row_3/Slot_9/TextureRect" to="playerInventory/playerInvContainer/rowContainer/Row_3/Slot_9" method="_on_texture_rect_gui_input"]
+[connection signal="mouse_entered" from="playerInventory/playerInvContainer/rowContainer/Row_3/Slot_9/TextureRect" to="playerInventory/playerInvContainer/rowContainer/Row_3/Slot_9" method="_on_texture_rect_mouse_entered"]
+[connection signal="mouse_exited" from="playerInventory/playerInvContainer/rowContainer/Row_3/Slot_9/TextureRect" to="playerInventory/playerInvContainer/rowContainer/Row_3/Slot_9" method="_on_texture_rect_mouse_exited"]
+[connection signal="gui_input" from="playerInventory/playerInvContainer/rowContainer/Row_3/Slot_10/TextureRect" to="playerInventory/playerInvContainer/rowContainer/Row_3/Slot_10" method="_on_texture_rect_gui_input"]
+[connection signal="mouse_entered" from="playerInventory/playerInvContainer/rowContainer/Row_3/Slot_10/TextureRect" to="playerInventory/playerInvContainer/rowContainer/Row_3/Slot_10" method="_on_texture_rect_mouse_entered"]
+[connection signal="mouse_exited" from="playerInventory/playerInvContainer/rowContainer/Row_3/Slot_10/TextureRect" to="playerInventory/playerInvContainer/rowContainer/Row_3/Slot_10" method="_on_texture_rect_mouse_exited"]
+[connection signal="gui_input" from="playerInventory/playerInvContainer/rowContainer/Row_3/Slot_11/TextureRect" to="playerInventory/playerInvContainer/rowContainer/Row_3/Slot_11" method="_on_texture_rect_gui_input"]
+[connection signal="mouse_entered" from="playerInventory/playerInvContainer/rowContainer/Row_3/Slot_11/TextureRect" to="playerInventory/playerInvContainer/rowContainer/Row_3/Slot_11" method="_on_texture_rect_mouse_entered"]
+[connection signal="mouse_exited" from="playerInventory/playerInvContainer/rowContainer/Row_3/Slot_11/TextureRect" to="playerInventory/playerInvContainer/rowContainer/Row_3/Slot_11" method="_on_texture_rect_mouse_exited"]
+[connection signal="gui_input" from="playerInventory/playerInvContainer/rowContainer/Row_3/Slot_12/TextureRect" to="playerInventory/playerInvContainer/rowContainer/Row_3/Slot_12" method="_on_texture_rect_gui_input"]
+[connection signal="mouse_entered" from="playerInventory/playerInvContainer/rowContainer/Row_3/Slot_12/TextureRect" to="playerInventory/playerInvContainer/rowContainer/Row_3/Slot_12" method="_on_texture_rect_mouse_entered"]
+[connection signal="mouse_exited" from="playerInventory/playerInvContainer/rowContainer/Row_3/Slot_12/TextureRect" to="playerInventory/playerInvContainer/rowContainer/Row_3/Slot_12" method="_on_texture_rect_mouse_exited"]

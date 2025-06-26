@@ -14,7 +14,7 @@ const SEED_1 = preload("res://Assets/polishedAssets/seed_1.png")
 var carrotQuant : int = 0
 
 signal inv_item_updated(invSlot, updatedItemInfo)
-signal inv_item_added(invSlot, itemInfo, quantity)
+signal inv_item_added(invSlot, itemInfo)
 
 func _process(delta):
 	if Input.is_action_just_pressed("open_main_menu"):
@@ -29,49 +29,56 @@ func _on_flower_pot_plant_gathered(quantity: Variant, type: Variant) -> void:
 
 	# Check for item in inventory
 	for i in player_inv_data.size():
+		
+		# If the inventory slot has an item
 		if player_inv_data[i] != null:
+			
+			# If item in inventory matches item gathered
 			if player_inv_data[i].name == type:
-				print("item found at position ", i, " carrot count before: ", player_inv_data[i].quantity, " and adding ", quantity)
+				
+				# Add gathered quantity to quantity in inventory slot
 				player_inv_data[i].quantity += quantity
-				print(player_inv_data[i].quantity, " carrots now")
+				
+				# Store position in inventory of item
 				invIndex = i
-				print(player_inv_data[i])
+				
 				# Emit inventory item updated signal -- pass in inventory slot, 
 				# and item information (includes updated quantity here)
-				inv_item_updated.emit((invIndex + 1), player_inv_data[i])
-		
+				inv_item_updated.emit((invIndex), player_inv_data[i])
 	
 	# if Item is was not found in inventory already
 	if invIndex == -1:
 		var openSlot = player_inv_data.find(null)
 		
+		# If there are no open slots -- full inventory
 		if openSlot == -1:
 			print("Inventory is full")
 		else:
 			# Get item position from list of items
-			var itemIndex = item_list.find(type)
-			print("Adding ", type, " to inventory.", quantity, " ", type, " to ", openSlot, " position") 
+			var itemIndex = item_list.filter(func(item): return item.name == type)
+			
 			# Insert item at first open slot
-			player_inv_data[openSlot] = item_list[itemIndex]
+			player_inv_data[openSlot] = itemIndex[0]
+			
 			# Set initial quantity of plant gathered
 			player_inv_data[openSlot].quantity += quantity
 			
 			# Emit item added signal -- pass slot position, item details, amount player has in inventory
-			inv_item_added.emit((itemIndex + 1), item_list[itemIndex], player_inv_data[openSlot].quantity)
-	
-	
+			inv_item_added.emit(openSlot, player_inv_data[openSlot])
+			
 func toggleInventory(inventory : PanelContainer):
 	#canvas_layer.position = getPlayerPos()
 	inventory.visible = !(inventory.visible)
 	
 func toggleMainMenu():
+	# Switch menu visibility between true and false
 	main_menu.visible = !(main_menu.visible)
 	
 func getPlayerPos():
 	var playerPos = player.position
 	return playerPos
 
-
+	
 func _on_fridge_fridge_opened() -> void:
 	fridge_inventory.position = fridge.position
 	toggleInventory(fridge_inventory)
