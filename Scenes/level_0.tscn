@@ -128,6 +128,7 @@ position = Vector2(598, 377)
 scale = Vector2(0.55, 0.55)
 
 [connection signal="inv_item_added" from="Game_Manager" to="CanvasLayer" method="_on_game_manager_inv_item_added"]
+[connection signal="inv_item_updated" from="Game_Manager" to="CanvasLayer" method="_on_game_manager_inv_item_updated"]
 [connection signal="plantGathered" from="FlowerPot" to="Game_Manager" method="_on_flower_pot_plant_gathered"]
 [connection signal="plantGathered" from="FlowerPot3" to="Game_Manager" method="_on_flower_pot_plant_gathered"]
 [connection signal="plantGathered" from="FlowerPot2" to="Game_Manager" method="_on_flower_pot_plant_gathered"]
